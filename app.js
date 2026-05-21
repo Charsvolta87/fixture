@@ -1,6 +1,71 @@
 // =========================
 // app.js
 // =========================
+const flags = {
+
+  "Argentina":"ar",
+  "Brasil":"br",
+  "Francia":"fr",
+  "España":"es",
+  "Portugal":"pt",
+  "Alemania":"de",
+  "México":"mx",
+  "Uruguay":"uy",
+  "Inglaterra":"gb",
+  "Estados Unidos":"us",
+  "Canadá":"ca",
+  "Japón":"jp",
+  "Corea del Sur":"kr",
+  "Australia":"au",
+  "Marruecos":"ma",
+  "Arabia Saudita":"sa",
+  "Croacia":"hr",
+  "Colombia":"co",
+  "Bélgica":"be",
+  "Países Bajos":"nl",
+  "Suiza":"ch",
+  "Austria":"at",
+  "Suecia":"se",
+  "Noruega":"no",
+  "Paraguay":"py",
+  "Ecuador":"ec",
+  "Ghana":"gh",
+  "Panamá":"pa",
+  "Senegal":"sn",
+  "Egipto":"eg",
+  "Irán":"ir",
+  "Qatar":"qa",
+  "Sudáfrica":"za",
+  "Túnez":"tn",
+  "Argelia":"dz",
+  "Irak":"iq",
+  "Jordania":"jo",
+  "Nueva Zelanda":"nz",
+  "Uzbekistán":"uz",
+  "Turquía":"tr",
+  "Escocia":"gb-sct",
+  "República Checa":"cz",
+  "Bosnia y Herzegovina":"ba",
+  "Costa de Marfil":"ci",
+  "Cabo Verde":"cv",
+  "Curazao":"cw",
+  "Haití":"ht",
+  "República Democrática del Congo":"cd"
+
+};
+function getFlag(team){
+
+  const code = flags[team];
+
+  return `
+    <img
+      src="imagenes/flags/${code}.svg"
+      class="flag"
+      alt="${team}"
+    >
+  `;
+
+}
 
 const groupsContainer = document.getElementById("groups-container");
 const matchesContainer = document.getElementById("matches-container");
@@ -93,6 +158,7 @@ function renderMatches(){
       <div class="teams">
 
         <div class="team">
+          ${getFlag(match.home)}
           ${match.home}
         </div>
 
@@ -101,6 +167,7 @@ function renderMatches(){
         </div>
 
         <div class="team">
+          ${getFlag(match.away)}
           ${match.away}
         </div>
 
