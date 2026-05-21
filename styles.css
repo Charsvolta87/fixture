@@ -651,7 +651,7 @@ a,
 /* ===================================== */
 
 #knockout-container{
-  width: 1200px;
+  width:100%;
   overflow-x:auto;
   overflow-y:hidden;
   padding:0px 0;
