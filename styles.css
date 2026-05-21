@@ -194,9 +194,9 @@ nav a:hover{
   border-radius:24px;
   padding:24px;
   backdrop-filter:blur(14px);
-  overflow:hidden;
   transition:.35s;
   min-width:0;
+  overflow-x:auto;
 }
 
 #groups-container{
@@ -205,6 +205,15 @@ nav a:hover{
     repeat(auto-fit,minmax(500px,1fr));
   gap:24px;
   margin-top:40px;
+}
+
+.standings{
+  font-size:.85rem;
+}
+
+.standings th,
+.standings td{
+  white-space:nowrap;
 }
 
 .group-card:hover{
