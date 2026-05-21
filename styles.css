@@ -725,13 +725,13 @@ a,
 /* LEFT */
 
 .r16.left{
-  left:-150px;
+  left:0px;
   top:90px;
   gap:38px;
 }
 
 .r8.left{
-  left:0px;
+  left:320px;
   top:190px;
   gap:180px;
 }
@@ -750,13 +750,13 @@ a,
 /* RIGHT */
 
 .r16.right{
-  right:-150px;
+  right:0px;
   top:90px;
   gap:38px;
 }
 
 .r8.right{
-  right:0px;
+  right:320px;
   top:190px;
   gap:180px;
 }
