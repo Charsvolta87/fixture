@@ -713,4 +713,359 @@ const matches = [
   awayScore: null
 },
 
+
+// =====================
+// GROUP I
+// =====================
+
+{
+  id: 49,
+  group: "I",
+  home: "Francia",
+  away: "Senegal",
+  stadium: "Miami Stadium",
+  city: "Miami",
+  date: "2026-06-19",
+  timeAR: "22:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 50,
+  group: "I",
+  home: "Irak",
+  away: "Noruega",
+  stadium: "Toronto Stadium",
+  city: "Toronto",
+  date: "2026-06-20",
+  timeAR: "18:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 51,
+  group: "I",
+  home: "Francia",
+  away: "Irak",
+  stadium: "Houston Stadium",
+  city: "Houston",
+  date: "2026-06-24",
+  timeAR: "21:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 52,
+  group: "I",
+  home: "Senegal",
+  away: "Noruega",
+  stadium: "Philadelphia Stadium",
+  city: "Philadelphia",
+  date: "2026-06-25",
+  timeAR: "20:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 53,
+  group: "I",
+  home: "Francia",
+  away: "Noruega",
+  stadium: "Los Angeles Stadium",
+  city: "Los Ángeles",
+  date: "2026-06-29",
+  timeAR: "22:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 54,
+  group: "I",
+  home: "Senegal",
+  away: "Irak",
+  stadium: "Seattle Stadium",
+  city: "Seattle",
+  date: "2026-06-29",
+  timeAR: "19:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+// =====================
+// GROUP J
+// =====================
+
+{
+  id: 55,
+  group: "J",
+  home: "Argentina",
+  away: "Argelia",
+  stadium: "MetLife Stadium",
+  city: "Nueva York",
+  date: "2026-06-20",
+  timeAR: "22:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 56,
+  group: "J",
+  home: "Austria",
+  away: "Jordania",
+  stadium: "Dallas Stadium",
+  city: "Dallas",
+  date: "2026-06-21",
+  timeAR: "18:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 57,
+  group: "J",
+  home: "Argentina",
+  away: "Austria",
+  stadium: "Atlanta Stadium",
+  city: "Atlanta",
+  date: "2026-06-25",
+  timeAR: "21:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 58,
+  group: "J",
+  home: "Argelia",
+  away: "Jordania",
+  stadium: "Kansas City Stadium",
+  city: "Kansas City",
+  date: "2026-06-26",
+  timeAR: "20:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 59,
+  group: "J",
+  home: "Argentina",
+  away: "Jordania",
+  stadium: "San Francisco Stadium",
+  city: "San Francisco",
+  date: "2026-06-30",
+  timeAR: "23:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 60,
+  group: "J",
+  home: "Argelia",
+  away: "Austria",
+  stadium: "Vancouver Stadium",
+  city: "Vancouver",
+  date: "2026-06-30",
+  timeAR: "19:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+// =====================
+// GROUP K
+// =====================
+
+{
+  id: 61,
+  group: "K",
+  home: "Portugal",
+  away: "República Democrática del Congo",
+  stadium: "Boston Stadium",
+  city: "Boston",
+  date: "2026-06-21",
+  timeAR: "22:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 62,
+  group: "K",
+  home: "Uzbekistán",
+  away: "Colombia",
+  stadium: "Houston Stadium",
+  city: "Houston",
+  date: "2026-06-22",
+  timeAR: "18:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 63,
+  group: "K",
+  home: "Portugal",
+  away: "Uzbekistán",
+  stadium: "Chicago Stadium",
+  city: "Chicago",
+  date: "2026-06-26",
+  timeAR: "21:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 64,
+  group: "K",
+  home: "República Democrática del Congo",
+  away: "Colombia",
+  stadium: "Miami Stadium",
+  city: "Miami",
+  date: "2026-06-27",
+  timeAR: "20:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 65,
+  group: "K",
+  home: "Portugal",
+  away: "Colombia",
+  stadium: "Los Angeles Stadium",
+  city: "Los Ángeles",
+  date: "2026-07-01",
+  timeAR: "22:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 66,
+  group: "K",
+  home: "República Democrática del Congo",
+  away: "Uzbekistán",
+  stadium: "Seattle Stadium",
+  city: "Seattle",
+  date: "2026-07-01",
+  timeAR: "19:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+// =====================
+// GROUP L
+// =====================
+
+{
+  id: 67,
+  group: "L",
+  home: "Inglaterra",
+  away: "Croacia",
+  stadium: "MetLife Stadium",
+  city: "Nueva York",
+  date: "2026-06-22",
+  timeAR: "22:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 68,
+  group: "L",
+  home: "Ghana",
+  away: "Panamá",
+  stadium: "Dallas Stadium",
+  city: "Dallas",
+  date: "2026-06-23",
+  timeAR: "18:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 69,
+  group: "L",
+  home: "Inglaterra",
+  away: "Ghana",
+  stadium: "Atlanta Stadium",
+  city: "Atlanta",
+  date: "2026-06-27",
+  timeAR: "21:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 70,
+  group: "L",
+  home: "Croacia",
+  away: "Panamá",
+  stadium: "Kansas City Stadium",
+  city: "Kansas City",
+  date: "2026-06-28",
+  timeAR: "20:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 71,
+  group: "L",
+  home: "Inglaterra",
+  away: "Panamá",
+  stadium: "San Francisco Stadium",
+  city: "San Francisco",
+  date: "2026-07-02",
+  timeAR: "23:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 72,
+  group: "L",
+  home: "Croacia",
+  away: "Ghana",
+  stadium: "Vancouver Stadium",
+  city: "Vancouver",
+  date: "2026-07-02",
+  timeAR: "19:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+}
+
+
+
 ];
