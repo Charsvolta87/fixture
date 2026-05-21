@@ -352,27 +352,80 @@ function renderMatches(){
 
 function renderKnockout(){
 
-  knockoutContainer.innerHTML = "";
+  const getMatch = id =>
+    knockout.find(match => match.id === id);
 
   // =========================
-  // PARTIDOS
+  // ORDEN FIFA REAL
   // =========================
 
-  const left16 = knockout.filter(match =>
-    [74,77,73,75,83,84,81,82]
-    .includes(match.id)
-  );
+  const left16 = [
+    getMatch(74),
+    getMatch(77),
+    getMatch(73),
+    getMatch(75),
+    getMatch(83),
+    getMatch(84),
+    getMatch(81),
+    getMatch(82)
+  ];
 
-  const right16 = knockout.filter(match =>
-    [76,78,79,80,86,88,85,87]
-    .includes(match.id)
-  );
+  const left8 = [
+    getMatch(89),
+    getMatch(90),
+    getMatch(93),
+    getMatch(94)
+  ];
+
+  const left4 = [
+    getMatch(97),
+    getMatch(98)
+  ];
+
+  const leftSemi = [
+    getMatch(101)
+  ];
 
   // =========================
-  // GENERADOR
+
+  const right16 = [
+    getMatch(76),
+    getMatch(78),
+    getMatch(79),
+    getMatch(80),
+    getMatch(86),
+    getMatch(88),
+    getMatch(85),
+    getMatch(87)
+  ];
+
+  const right8 = [
+    getMatch(91),
+    getMatch(92),
+    getMatch(95),
+    getMatch(96)
+  ];
+
+  const right4 = [
+    getMatch(99),
+    getMatch(100)
+  ];
+
+  const rightSemi = [
+    getMatch(102)
+  ];
+
+  // =========================
+
+  const finalMatch = getMatch(104);
+
+  // =========================
+  // CARD
   // =========================
 
   function createMatchHTML(match){
+
+    if(!match) return "";
 
     let awayTeam = match.away;
 
@@ -401,7 +454,7 @@ function renderKnockout(){
       <div class="bracket-match">
 
         <div class="match-id">
-          #${match.id}
+          PARTIDO ${match.id}
         </div>
 
         <div class="bracket-team">
@@ -417,9 +470,13 @@ function renderKnockout(){
         </div>
 
         <div class="bracket-info">
-          ${match.date}<br>
-          ${match.timeAR}<br>
-          ${match.city}
+
+          🏟 ${match.stadium}<br>
+
+          📅 ${match.date}<br>
+
+          🕒 ${match.timeAR}
+
         </div>
 
       </div>
@@ -445,30 +502,20 @@ function renderKnockout(){
         </div>
 
         <div class="round round-8">
-
-          <div class="empty-match"></div>
-          <div class="empty-match"></div>
-          <div class="empty-match"></div>
-          <div class="empty-match"></div>
-
+          ${left8.map(createMatchHTML).join("")}
         </div>
 
         <div class="round round-4">
-
-          <div class="empty-match"></div>
-          <div class="empty-match"></div>
-
+          ${left4.map(createMatchHTML).join("")}
         </div>
 
         <div class="round round-2">
-
-          <div class="empty-match"></div>
-
+          ${leftSemi.map(createMatchHTML).join("")}
         </div>
 
       </div>
 
-      <!-- CENTER -->
+      <!-- FINAL -->
 
       <div class="final-column">
 
@@ -476,11 +523,7 @@ function renderKnockout(){
           FINAL
         </div>
 
-        <div class="final-match">
-
-          <div class="empty-match"></div>
-
-        </div>
+        ${createMatchHTML(finalMatch)}
 
       </div>
 
@@ -489,25 +532,15 @@ function renderKnockout(){
       <div class="bracket-side right-side">
 
         <div class="round round-2">
-
-          <div class="empty-match"></div>
-
+          ${rightSemi.map(createMatchHTML).join("")}
         </div>
 
         <div class="round round-4">
-
-          <div class="empty-match"></div>
-          <div class="empty-match"></div>
-
+          ${right4.map(createMatchHTML).join("")}
         </div>
 
         <div class="round round-8">
-
-          <div class="empty-match"></div>
-          <div class="empty-match"></div>
-          <div class="empty-match"></div>
-          <div class="empty-match"></div>
-
+          ${right8.map(createMatchHTML).join("")}
         </div>
 
         <div class="round round-16">

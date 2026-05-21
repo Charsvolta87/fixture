@@ -1185,3 +1185,58 @@ a,
   }
 
 }
+
+
+.fifa-bracket{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:80px;
+  min-width:2200px;
+  padding:40px;
+}
+
+.bracket-side{
+  display:flex;
+  gap:40px;
+  align-items:center;
+}
+
+.round{
+  display:flex;
+  flex-direction:column;
+}
+
+.round-16{
+  gap:22px;
+}
+
+.round-8{
+  gap:120px;
+}
+
+.round-4{
+  gap:260px;
+}
+
+.round-2{
+  gap:540px;
+}
+
+.final-column{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.final-title{
+  font-size:2rem;
+  font-weight:900;
+  margin-bottom:30px;
+}
+
+.bracket-match{
+  width:220px;
+  min-height:150px;
+}
