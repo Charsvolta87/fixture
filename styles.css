@@ -930,3 +930,142 @@ a,
   }
 
 }
+
+/* ========================= */
+/* FIFA REAL BRACKET */
+/* ========================= */
+
+.fifa-bracket{
+  min-width:1800px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:80px;
+  padding:40px;
+}
+
+.bracket-side{
+  display:flex;
+  gap:60px;
+}
+
+.round{
+  display:flex;
+  flex-direction:column;
+}
+
+/* ESPACIADOS */
+
+.round-16{
+  gap:30px;
+}
+
+.round-8{
+  gap:120px;
+  margin-top:80px;
+}
+
+.round-4{
+  gap:260px;
+  margin-top:180px;
+}
+
+.round-2{
+  gap:540px;
+  margin-top:340px;
+}
+
+/* PARTIDOS */
+
+.bracket-match,
+.empty-match{
+
+  width:220px;
+  min-height:120px;
+
+  border-radius:18px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.03)
+    );
+
+  border:1px solid rgba(255,255,255,.08);
+
+  padding:14px;
+
+  backdrop-filter:blur(12px);
+
+  position:relative;
+}
+
+.empty-match{
+  opacity:.25;
+}
+
+/* EQUIPOS */
+
+.bracket-team{
+
+  background:rgba(255,255,255,.06);
+
+  border-radius:12px;
+
+  padding:12px;
+
+  text-align:center;
+
+  font-weight:800;
+
+  margin-bottom:10px;
+}
+
+.bracket-score{
+  text-align:center;
+  font-size:1.4rem;
+  font-weight:900;
+  margin:10px 0;
+}
+
+.bracket-info{
+  margin-top:12px;
+  text-align:center;
+  font-size:.8rem;
+  color:var(--muted);
+}
+
+.match-id{
+  font-size:.8rem;
+  color:#7dd3fc;
+  margin-bottom:10px;
+  font-weight:700;
+}
+
+/* FINAL */
+
+.final-column{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:30px;
+}
+
+.final-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:4rem;
+  letter-spacing:4px;
+}
+
+.final-match{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* MOBILE */
+
+#knockout-container{
+  overflow-x:auto;
+}

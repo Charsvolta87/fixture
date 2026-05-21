@@ -354,126 +354,170 @@ function renderKnockout(){
 
   knockoutContainer.innerHTML = "";
 
-  const roundsOrder = [
-    "DIECISEISAVOS",
-    "OCTAVOS",
-    "CUARTOS",
-    "SEMIFINAL",
-    "FINAL"
-  ];
+  // =========================
+  // PARTIDOS
+  // =========================
 
-  const rounds = {};
+  const left16 = knockout.filter(match =>
+    [74,77,73,75,83,84,81,82]
+    .includes(match.id)
+  );
 
-  roundsOrder.forEach(round => {
-    rounds[round] = knockout.filter(
-      match => match.round === round
-    );
-  });
+  const right16 = knockout.filter(match =>
+    [76,78,79,80,86,88,85,87]
+    .includes(match.id)
+  );
 
-  let bracketHTML = `
-    <div class="bracket-wrapper">
-      <div class="bracket">
-  `;
+  // =========================
+  // GENERADOR
+  // =========================
 
-  roundsOrder.forEach(roundName => {
+  function createMatchHTML(match){
 
-    bracketHTML += `
-      <div class="bracket-round">
+    let awayTeam = match.away;
 
-        <div class="bracket-round-title">
-          ${roundName}
+    if(
+      !awayTeam &&
+      match.awayOptions &&
+      match.awayOptions.length
+    ){
+
+      awayTeam =
+        `3º ${match.awayOptions
+          .map(team =>
+            team.replace("3","")
+          )
+          .join("/")}`;
+
+    }
+
+    const score =
+      match.homeScore !== null
+      ? `${match.homeScore} - ${match.awayScore}`
+      : "VS";
+
+    return `
+
+      <div class="bracket-match">
+
+        <div class="match-id">
+          #${match.id}
         </div>
+
+        <div class="bracket-team">
+          ${match.home}
+        </div>
+
+        <div class="bracket-score">
+          ${score}
+        </div>
+
+        <div class="bracket-team">
+          ${awayTeam}
+        </div>
+
+        <div class="bracket-info">
+          ${match.date}<br>
+          ${match.city}
+        </div>
+
+      </div>
+
     `;
 
-    rounds[roundName].forEach(match => {
+  }
 
-      let awayTeam = match.away;
+  // =========================
+  // HTML
+  // =========================
 
-      if(
-        !awayTeam &&
-        match.awayOptions &&
-        match.awayOptions.length
-      ){
+  knockoutContainer.innerHTML = `
 
-        awayTeam =
-          `3º ${match.awayOptions
-            .map(team =>
-              team.replace("3","")
-            )
-            .join("/")}`;
+    <div class="fifa-bracket">
 
-      }
+      <!-- LEFT -->
 
-      const score =
-        match.homeScore !== null
-        ? `${match.homeScore} - ${match.awayScore}`
-        : "VS";
+      <div class="bracket-side left-side">
 
-      const statusClass =
-        match.status === "finished"
-        ? "status-finished"
-        : "status-upcoming";
+        <div class="round round-16">
+          ${left16.map(createMatchHTML).join("")}
+        </div>
 
-      const statusText =
-        match.status === "finished"
-        ? "FINALIZADO"
-        : "PRÓXIMO";
+        <div class="round round-8">
 
-      bracketHTML += `
-
-        <div class="bracket-match">
-
-          <div class="match-top">
-
-            <div class="match-date">
-              ${match.date}
-            </div>
-
-            <div class="match-city">
-              ${match.city}
-            </div>
-
-          </div>
-
-          <div class="match-status ${statusClass}">
-            ${statusText}
-          </div>
-
-          <div class="bracket-team">
-            ${match.home}
-          </div>
-
-          <div class="bracket-score">
-            ${score}
-          </div>
-
-          <div class="bracket-team">
-            ${awayTeam}
-          </div>
-
-          <div class="bracket-info">
-            🏟 ${match.stadium}<br>
-            🕒 ${match.timeAR} ARG
-          </div>
+          <div class="empty-match"></div>
+          <div class="empty-match"></div>
+          <div class="empty-match"></div>
+          <div class="empty-match"></div>
 
         </div>
 
-      `;
+        <div class="round round-4">
 
-    });
+          <div class="empty-match"></div>
+          <div class="empty-match"></div>
 
-    bracketHTML += `
+        </div>
+
+        <div class="round round-2">
+
+          <div class="empty-match"></div>
+
+        </div>
+
       </div>
-    `;
 
-  });
+      <!-- CENTER -->
 
-  bracketHTML += `
+      <div class="final-column">
+
+        <div class="final-title">
+          FINAL
+        </div>
+
+        <div class="final-match">
+
+          <div class="empty-match"></div>
+
+        </div>
+
       </div>
+
+      <!-- RIGHT -->
+
+      <div class="bracket-side right-side">
+
+        <div class="round round-2">
+
+          <div class="empty-match"></div>
+
+        </div>
+
+        <div class="round round-4">
+
+          <div class="empty-match"></div>
+          <div class="empty-match"></div>
+
+        </div>
+
+        <div class="round round-8">
+
+          <div class="empty-match"></div>
+          <div class="empty-match"></div>
+          <div class="empty-match"></div>
+          <div class="empty-match"></div>
+
+        </div>
+
+        <div class="round round-16">
+          ${right16.map(createMatchHTML).join("")}
+        </div>
+
+      </div>
+
     </div>
-  `;
 
-  knockoutContainer.innerHTML = bracketHTML;
+  `;
 
 }
 
