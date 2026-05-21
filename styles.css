@@ -34,9 +34,24 @@ body{
   position:fixed;
   inset:0;
   background:
-  radial-gradient(circle at top left,#13253d 0%,transparent 35%),
-  radial-gradient(circle at bottom right,#2a1248 0%,transparent 30%);
+    linear-gradient(
+      rgba(7,17,31,.94),
+      rgba(7,17,31,.96)
+    ),
+    url("imagenes/icono.png");
+  background-size:
+    cover,
+    900px;
+  background-position:
+    center,
+    center;
+  background-repeat:no-repeat;
+  opacity:.16;
+  filter:
+    saturate(0)
+    brightness(.8);
   z-index:-2;
+  pointer-events:none;
 }
 
 .animated-gradient{
@@ -363,4 +378,20 @@ nav a:hover{
 .group-team:hover{
   transform:translateX(5px);
   border-color:rgba(255,255,255,.15);
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      transparent 0%,
+      rgba(0,0,0,.35) 100%
+    );
+
+  pointer-events:none;
+  z-index:-1;
 }
