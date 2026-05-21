@@ -1,40 +1,134 @@
-// =========================
-// data/groups.js
-// =========================
-
 const groupsData = {
 
   A: {
+    standings: [],
+    matches: [],
+    teams: [
+      "México",
+      "Sudáfrica",
+      "Corea del Sur",
+      "República Checa"
+    ]
+  },
 
-    standings: [
-      { team: "Argentina", pts: 6, gf: 5, ga: 1 },
-      { team: "Japón", pts: 3, gf: 2, ga: 2 },
-      { team: "México", pts: 1, gf: 1, ga: 3 },
-      { team: "Nigeria", pts: 1, gf: 1, ga: 3 }
-    ],
+  B: {
+    standings: [],
+    matches: [],
+    teams: [
+      "Canadá",
+      "Bosnia y Herzegovina",
+      "Qatar",
+      "Suiza"
+    ]
+  },
 
-    matches: [
-      {
-        home: "Argentina",
-        away: "Japón",
-        homeScore: 2,
-        awayScore: 1,
-        stadium: "Azteca",
-        date: "14 Jun 2026",
-        time: "21:00",
-        status: "finished"
-      },
+  C: {
+    standings: [],
+    matches: [],
+    teams: [
+      "Brasil",
+      "Marruecos",
+      "Haití",
+      "Escocia"
+    ]
+  },
 
-      {
-        home: "México",
-        away: "Nigeria",
-        homeScore: 1,
-        awayScore: 1,
-        stadium: "Monterrey",
-        date: "15 Jun 2026",
-        time: "18:00",
-        status: "finished"
-      }
+  D: {
+    standings: [],
+    matches: [],
+    teams: [
+      "Estados Unidos",
+      "Paraguay",
+      "Australia",
+      "Turquía"
+    ]
+  },
+
+  E: {
+    standings: [],
+    matches: [],
+    teams: [
+      "Alemania",
+      "Curazao",
+      "Costa de Marfil",
+      "Ecuador"
+    ]
+  },
+
+  F: {
+    standings: [],
+    matches: [],
+    teams: [
+      "Países Bajos",
+      "Japón",
+      "Suecia",
+      "Túnez"
+    ]
+  },
+
+  G: {
+    standings: [],
+    matches: [],
+    teams: [
+      "Bélgica",
+      "Egipto",
+      "Irán",
+      "Nueva Zelanda"
+    ]
+  },
+
+  H: {
+    standings: [],
+    matches: [],
+    teams: [
+      "España",
+      "Cabo Verde",
+      "Arabia Saudita",
+      "Uruguay"
+    ]
+  },
+
+  I: {
+    standings: [],
+    matches: [],
+    teams: [
+      "Francia",
+      "Senegal",
+      "Irak",
+      "Noruega"
+    ]
+  },
+
+  J: {
+    standings: [],
+    matches: [],
+    teams: [
+      "Argentina",
+      "Argelia",
+      "Austria",
+      "Jordania"
+    ]
+  },
+
+  K: {
+    standings: [],
+    matches: [],
+    teams: [
+      "Portugal",
+      "República Democrática del Congo",
+      "Uzbekistán",
+      "Colombia"
+    ]
+  },
+
+  L: {
+    standings: [],
+    matches: [],
+    teams: [
+      "Inglaterra",
+      "Croacia",
+      "Ghana",
+      "Panamá"
     ]
   }
 
