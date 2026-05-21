@@ -1,40 +1,102 @@
 // =========================
-// admin/generator.js
+// generator.js
 // =========================
 
-const data = {};
+let currentMode = "groups";
+
+const groupsData = [];
+const knockoutData = [];
+
+const modeButtons =
+  document.querySelectorAll(".mode-btn");
+
+modeButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    modeButtons.forEach(btn => {
+      btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    currentMode =
+      button.dataset.mode;
+
+    updatePreview();
+
+  });
+
+});
 
 function addMatch(){
 
-  const group = document.getElementById("group").value;
-  const home = document.getElementById("home").value;
-  const away = document.getElementById("away").value;
-  const homeScore = Number(document.getElementById("homeScore").value);
-  const awayScore = Number(document.getElementById("awayScore").value);
-  const stadium = document.getElementById("stadium").value;
-  const date = document.getElementById("date").value;
-  const time = document.getElementById("time").value;
-  const status = document.getElementById("status").value;
+  const match = {
 
-  if(!data[group]){
+    id:Number(
+      document.getElementById("matchId").value
+    ),
 
-    data[group] = {
-      standings: [],
-      matches: []
-    };
+    round:
+      document.getElementById("group").value,
+
+    home:
+      document.getElementById("home").value,
+
+    away:
+      document.getElementById("away").value || null,
+
+    awayOptions:
+      document.getElementById("awayOptions")
+      .value
+      .split(",")
+      .map(item => item.trim())
+      .filter(item => item !== ""),
+
+    homeScore:
+      document.getElementById("homeScore").value
+      === ""
+      ? null
+      : Number(
+          document.getElementById("homeScore").value
+        ),
+
+    awayScore:
+      document.getElementById("awayScore").value
+      === ""
+      ? null
+      : Number(
+          document.getElementById("awayScore").value
+        ),
+
+    stadium:
+      document.getElementById("stadium").value,
+
+    city:
+      document.getElementById("city").value,
+
+    date:
+      document.getElementById("date").value,
+
+    timeAR:
+      document.getElementById("time").value,
+
+    status:
+      document.getElementById("status").value
+
+  };
+
+  if(currentMode === "groups"){
+
+    groupsData.push(match);
 
   }
 
-  data[group].matches.push({
-    home,
-    away,
-    homeScore,
-    awayScore,
-    stadium,
-    date,
-    time,
-    status
-  });
+  else{
+
+    knockoutData.push(match);
+
+  }
 
   updatePreview();
 
@@ -42,28 +104,64 @@ function addMatch(){
 
 function updatePreview(){
 
-  const preview = document.getElementById("preview");
+  const preview =
+    document.getElementById("preview");
 
-  preview.textContent =
-`const groupsData = ${JSON.stringify(data, null, 2)};`;
+  if(currentMode === "groups"){
+
+    preview.textContent =
+`const matches = ${JSON.stringify(groupsData, null, 2)};`;
+
+  }
+
+  else{
+
+    preview.textContent =
+`const knockout = ${JSON.stringify(knockoutData, null, 2)};`;
+
+  }
 
 }
 
 function downloadJS(){
 
-  const content =
-`const groupsData = ${JSON.stringify(data, null, 2)};`;
+  let content = "";
+  let filename = "";
 
-  const blob = new Blob([content], {
-    type:"application/javascript"
-  });
+  if(currentMode === "groups"){
 
-  const url = URL.createObjectURL(blob);
+    content =
+`const matches = ${JSON.stringify(groupsData, null, 2)};`;
 
-  const a = document.createElement("a");
+    filename = "matches.js";
+
+  }
+
+  else{
+
+    content =
+`const knockout = ${JSON.stringify(knockoutData, null, 2)};`;
+
+    filename = "knockout.js";
+
+  }
+
+  const blob = new Blob(
+    [content],
+    {
+      type:"application/javascript"
+    }
+  );
+
+  const url =
+    URL.createObjectURL(blob);
+
+  const a =
+    document.createElement("a");
 
   a.href = url;
-  a.download = "groups.js";
+
+  a.download = filename;
 
   a.click();
 

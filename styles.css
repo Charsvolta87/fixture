@@ -642,3 +642,54 @@ a,
   }
 
 }
+
+
+#knockout-container{
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+
+.knockout-round{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.knockout-title{
+  font-family:'Bebas Neue';
+  font-size:2rem;
+  letter-spacing:1px;
+}
+
+.knockout-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+}
+
+@media(min-width:900px){
+
+  .knockout-grid{
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+  }
+
+}
+
+.knockout-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:22px;
+  backdrop-filter:blur(15px);
+  transition:.3s;
+}
+
+.knockout-card:hover{
+  transform:translateY(-4px);
+  border-color:
+    rgba(255,255,255,.12);
+}

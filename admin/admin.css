@@ -48,3 +48,35 @@ pre{
   border-radius:15px;
   overflow:auto;
 }
+
+.mode-selector{
+
+  display:flex;
+
+  gap:15px;
+
+  margin-bottom:30px;
+}
+
+.mode-btn{
+
+  background:#111c2d;
+
+  color:white;
+}
+
+.mode-btn.active{
+
+  background:#00c3ff;
+
+  color:black;
+}
+
+.buttons{
+
+  display:flex;
+
+  gap:15px;
+
+  margin-top:10px;
+}

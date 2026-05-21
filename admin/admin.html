@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>World Cup Generator</title>
+
+  <link rel="stylesheet" href="admin.css">
+
+</head>
+<body>
+
+  <div class="admin-panel">
+
+    <h1>WORLD CUP DATA GENERATOR</h1>
+
+    <div class="mode-selector">
+
+      <button
+        class="mode-btn active"
+        data-mode="groups"
+      >
+        FASE DE GRUPOS
+      </button>
+
+      <button
+        class="mode-btn"
+        data-mode="knockout"
+      >
+        ELIMINATORIAS
+      </button>
+
+    </div>
+
+    <div class="form-grid">
+
+      <input
+        type="number"
+        id="matchId"
+        placeholder="ID Partido"
+      >
+
+      <input
+        type="text"
+        id="group"
+        placeholder="Grupo / Ronda"
+      >
+
+      <input
+        type="text"
+        id="home"
+        placeholder="Local"
+      >
+
+      <input
+        type="text"
+        id="away"
+        placeholder="Visitante"
+      >
+
+      <input
+        type="text"
+        id="awayOptions"
+        placeholder="3A,3B,3C..."
+      >
+
+      <input
+        type="number"
+        id="homeScore"
+        placeholder="Goles local"
+      >
+
+      <input
+        type="number"
+        id="awayScore"
+        placeholder="Goles visitante"
+      >
+
+      <input
+        type="text"
+        id="stadium"
+        placeholder="Estadio"
+      >
+
+      <input
+        type="text"
+        id="city"
+        placeholder="Ciudad"
+      >
+
+      <input
+        type="date"
+        id="date"
+      >
+
+      <input
+        type="time"
+        id="time"
+      >
+
+      <select id="status">
+
+        <option value="upcoming">
+          Próximo
+        </option>
+
+        <option value="finished">
+          Finalizado
+        </option>
+
+      </select>
+
+    </div>
+
+    <div class="buttons">
+
+      <button onclick="addMatch()">
+        AGREGAR
+      </button>
+
+      <button onclick="downloadJS()">
+        DESCARGAR JS
+      </button>
+
+    </div>
+
+    <pre id="preview"></pre>
+
+  </div>
+
+  <script src="generator.js"></script>
+
+</body>
+</html>
