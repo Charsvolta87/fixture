@@ -55,12 +55,7 @@ const flags = {
 };
 function getFlag(team){
 
-  const knockoutContainer =
-  document.getElementById(
-    "knockout-container"
-  );
-
-  const code = flags[team];
+    const code = flags[team];
 
   return `
     <img
@@ -72,6 +67,11 @@ function getFlag(team){
 
 }
 
+const knockoutContainer =
+  document.getElementById(
+    "knockout-container"
+  );
+  
 const groupsContainer = document.getElementById("groups-container");
 const matchesContainer = document.getElementById("matches-container");
 let currentGroup = "ALL";
