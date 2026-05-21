@@ -936,260 +936,303 @@ a,
 
 
 
-/* =========================
-   FIFA BRACKET
-========================= */
+/* ===================================== */
+/* FIFA REAL BRACKET */
+/* ===================================== */
 
 #knockout-container{
   width:100%;
   overflow-x:auto;
   overflow-y:hidden;
-  padding-bottom:20px;
+  padding:20px 0 60px;
 }
 
 .fifa-bracket{
 
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  min-width:1650px;
+  min-height:950px;
 
-  gap:2vw;
+  display:grid;
 
-  width:100%;
-  min-width:1400px;
+  grid-template-columns:
 
-  padding:40px 30px;
-  box-sizing:border-box;
+    220px
+    220px
+    220px
+    220px
+    240px
+    220px
+    220px
+    220px
+    220px;
 
-}
+  position:relative;
 
-/* =========================
-   SIDES
-========================= */
-
-.bracket-side{
-  display:flex;
-  align-items:center;
-  gap:1.5vw;
-}
-
-.round{
-  display:flex;
-  flex-direction:column;
-}
-
-/* =========================
-   SPACING BETWEEN MATCHES
-========================= */
-
-.round-16{
-  gap:18px;
-}
-
-.round-8{
-  gap:90px;
-}
-
-.round-4{
-  gap:200px;
-}
-
-.round-2{
-  gap:420px;
-}
-
-/* =========================
-   FINAL
-========================= */
-
-.final-column{
-  display:flex;
-  flex-direction:column;
   align-items:center;
   justify-content:center;
 
-  padding:0 10px;
+  gap:0;
+
 }
 
-.final-title{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:2.5rem;
-  letter-spacing:2px;
-  margin-bottom:25px;
-  color:white;
+/* ===================================== */
+/* COLUMNAS */
+/* ===================================== */
+
+.bracket-column{
+  position:relative;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+
+  height:100%;
 }
 
-/* =========================
-   MATCH CARD
-========================= */
+/* ===================================== */
+/* ESPACIADOS VERTICALES */
+/* ===================================== */
+
+.col-last16{
+  gap:38px;
+}
+
+.col-octavos{
+  gap:120px;
+}
+
+.col-cuartos{
+  gap:250px;
+}
+
+.col-semis{
+  gap:520px;
+}
+
+.col-final{
+  justify-content:center;
+  align-items:center;
+}
+
+/* ===================================== */
+/* MATCH */
+/* ===================================== */
 
 .bracket-match{
 
-  width:13vw;
-  min-width:180px;
-  max-width:240px;
+  width:180px;
 
   background:
     linear-gradient(
       180deg,
-      rgba(255,255,255,.06),
-      rgba(255,255,255,.03)
+      rgba(14,27,60,.95),
+      rgba(5,12,30,.96)
     );
 
   border:1px solid rgba(255,255,255,.08);
 
-  border-radius:22px;
+  border-radius:18px;
 
-  padding:16px;
+  padding:12px;
 
-  backdrop-filter:blur(14px);
+  position:relative;
 
-  transition:.3s;
+  backdrop-filter:blur(10px);
 
-  box-sizing:border-box;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.03),
+    0 15px 30px rgba(0,0,0,.35);
 
+  transition:.25s;
 }
 
 .bracket-match:hover{
-  transform:translateY(-4px);
-  border-color:rgba(255,255,255,.18);
+
+  transform:translateY(-3px);
+
+  border-color:
+    rgba(255,255,255,.16);
+
 }
+
+/* ===================================== */
+/* TOP */
+/* ===================================== */
 
 .match-id{
-  font-size:.7rem;
-  color:var(--muted);
-  margin-bottom:10px;
-  font-weight:700;
+
+  font-size:.55rem;
+
+  text-transform:uppercase;
+
   letter-spacing:1px;
+
+  color:#8ea4d2;
+
+  margin-bottom:10px;
+
+  font-weight:700;
 }
 
+/* ===================================== */
+/* TEAMS */
+/* ===================================== */
+
 .bracket-team{
+
+  height:34px;
+
+  border-radius:10px;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  text-align:center;
-
-  min-height:46px;
-
-  padding:10px;
-
-  border-radius:12px;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.06);
-
+  font-size:.82rem;
   font-weight:800;
 
-  font-size:.95rem;
+  background:
+    rgba(255,255,255,.05);
 
+  border:
+    1px solid rgba(255,255,255,.06);
+
+  color:white;
 }
 
 .bracket-score{
 
-  text-align:center;
+  height:38px;
 
-  font-size:1.3rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
+  font-size:1rem;
   font-weight:900;
 
-  margin:10px 0;
-
+  color:white;
 }
+
+/* ===================================== */
+/* INFO */
+/* ===================================== */
 
 .bracket-info{
 
-  margin-top:14px;
+  margin-top:10px;
 
-  font-size:.78rem;
+  text-align:center;
+
+  font-size:.58rem;
 
   line-height:1.5;
 
-  color:var(--muted);
-
+  color:#8ea4d2;
 }
 
-/* =========================
-   LARGE DESKTOP
-========================= */
+/* ===================================== */
+/* FINAL */
+/* ===================================== */
 
-@media(max-width:1700px){
+.final-wrapper{
 
-  .fifa-bracket{
-    min-width:1250px;
-  }
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
 
-  .bracket-match{
-    width:200px;
-  }
-
+  gap:20px;
 }
 
-/* =========================
-   LAPTOP
-========================= */
+.final-title{
+
+  font-family:'Bebas Neue',sans-serif;
+
+  font-size:3rem;
+
+  letter-spacing:3px;
+
+  color:white;
+}
+
+/* ===================================== */
+/* CONNECTORS */
+/* ===================================== */
+
+.connector-right::after{
+
+  content:"";
+
+  position:absolute;
+
+  right:-40px;
+  top:50%;
+
+  width:40px;
+  height:2px;
+
+  background:
+    rgba(255,255,255,.28);
+}
+
+.connector-left::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:-40px;
+  top:50%;
+
+  width:40px;
+  height:2px;
+
+  background:
+    rgba(255,255,255,.28);
+}
+
+/* ===================================== */
+/* RESPONSIVE */
+/* ===================================== */
 
 @media(max-width:1400px){
 
   .fifa-bracket{
 
-    min-width:1150px;
+    transform:scale(.88);
+    transform-origin:top left;
 
-    gap:25px;
-
-  }
-
-  .bracket-side{
-    gap:18px;
-  }
-
-  .bracket-match{
-    width:180px;
-    padding:14px;
+    min-width:1500px;
   }
 
 }
 
-/* =========================
-   TABLET
-========================= */
-
-@media(max-width:992px){
+@media(max-width:1000px){
 
   .fifa-bracket{
 
-    min-width:1350px;
+    transform:scale(.72);
+    transform-origin:top left;
 
-    padding:20px;
-
+    min-width:1450px;
   }
 
 }
-
-/* =========================
-   MOBILE
-========================= */
 
 @media(max-width:768px){
 
   #knockout-container{
-    overflow-x:auto;
+    padding-bottom:10px;
   }
 
   .fifa-bracket{
 
-    min-width:1450px;
+    transform:scale(.58);
 
-    padding:20px 15px;
+    transform-origin:top left;
 
-  }
-
-  .bracket-match{
-
-    width:200px;
-
+    min-width:1350px;
   }
 
 }
