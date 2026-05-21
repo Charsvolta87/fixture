@@ -937,36 +937,30 @@ a,
 
 
 /* =========================
-   FIFA BRACKET COMPACT
+   FIFA BRACKET
 ========================= */
 
 #knockout-container{
   width:100%;
   overflow-x:auto;
   overflow-y:hidden;
-
-  padding-bottom:10px;
-
-  -webkit-overflow-scrolling:touch;
+  padding-bottom:20px;
 }
-
-/* =========================
-   BRACKET
-========================= */
 
 .fifa-bracket{
 
-  width:max-content;
-  min-width:920px;
-
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
 
-  gap:12px;
+  gap:2vw;
 
-  padding:10px 6px;
-  margin:auto;
+  width:100%;
+  min-width:1400px;
+
+  padding:40px 30px;
+  box-sizing:border-box;
+
 }
 
 /* =========================
@@ -976,129 +970,32 @@ a,
 .bracket-side{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:1.5vw;
 }
-
-/* =========================
-   ROUNDS
-========================= */
 
 .round{
   display:flex;
   flex-direction:column;
 }
 
+/* =========================
+   SPACING BETWEEN MATCHES
+========================= */
+
 .round-16{
-  gap:8px;
+  gap:18px;
 }
 
 .round-8{
-  gap:34px;
+  gap:90px;
 }
 
 .round-4{
-  gap:76px;
+  gap:200px;
 }
 
 .round-2{
-  gap:160px;
-}
-
-/* =========================
-   MATCHES
-========================= */
-
-.bracket-match,
-.empty-match{
-
-  width:118px;
-  min-height:60px;
-
-  padding:5px;
-
-  border-radius:10px;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,.08),
-      rgba(255,255,255,.03)
-    );
-
-  border:1px solid rgba(255,255,255,.06);
-
-  backdrop-filter:blur(8px);
-
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-
-  position:relative;
-}
-
-.empty-match{
-  opacity:.18;
-}
-
-/* =========================
-   TEAM
-========================= */
-
-.bracket-team{
-
-  padding:3px 5px;
-
-  border-radius:6px;
-
-  background:rgba(255,255,255,.04);
-
-  text-align:center;
-
-  font-size:.58rem;
-  font-weight:700;
-
-  line-height:1.1;
-
-  margin:1px 0;
-
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-}
-
-.bracket-score{
-
-  text-align:center;
-
-  font-size:.72rem;
-  font-weight:900;
-
-  margin:2px 0;
-}
-
-.bracket-info{
-
-  margin-top:3px;
-
-  text-align:center;
-
-  font-size:13px;
-
-  color:var(--muted);
-
-  line-height:1.15;
-}
-
-.match-id{
-
-  position:absolute;
-
-  top:3px;
-  right:5px;
-
-  font-size:.42rem;
-
-  opacity:.45;
+  gap:420px;
 }
 
 /* =========================
@@ -1109,19 +1006,166 @@ a,
   display:flex;
   flex-direction:column;
   align-items:center;
+  justify-content:center;
 
-  gap:8px;
+  padding:0 10px;
 }
 
 .final-title{
-
   font-family:'Bebas Neue',sans-serif;
+  font-size:2.5rem;
+  letter-spacing:2px;
+  margin-bottom:25px;
+  color:white;
+}
 
-  font-size:1.2rem;
+/* =========================
+   MATCH CARD
+========================= */
 
+.bracket-match{
+
+  width:13vw;
+  min-width:180px;
+  max-width:240px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.06),
+      rgba(255,255,255,.03)
+    );
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:22px;
+
+  padding:16px;
+
+  backdrop-filter:blur(14px);
+
+  transition:.3s;
+
+  box-sizing:border-box;
+
+}
+
+.bracket-match:hover{
+  transform:translateY(-4px);
+  border-color:rgba(255,255,255,.18);
+}
+
+.match-id{
+  font-size:.7rem;
+  color:var(--muted);
+  margin-bottom:10px;
+  font-weight:700;
   letter-spacing:1px;
+}
 
-  white-space:nowrap;
+.bracket-team{
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  min-height:46px;
+
+  padding:10px;
+
+  border-radius:12px;
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.06);
+
+  font-weight:800;
+
+  font-size:.95rem;
+
+}
+
+.bracket-score{
+
+  text-align:center;
+
+  font-size:1.3rem;
+
+  font-weight:900;
+
+  margin:10px 0;
+
+}
+
+.bracket-info{
+
+  margin-top:14px;
+
+  font-size:.78rem;
+
+  line-height:1.5;
+
+  color:var(--muted);
+
+}
+
+/* =========================
+   LARGE DESKTOP
+========================= */
+
+@media(max-width:1700px){
+
+  .fifa-bracket{
+    min-width:1250px;
+  }
+
+  .bracket-match{
+    width:200px;
+  }
+
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media(max-width:1400px){
+
+  .fifa-bracket{
+
+    min-width:1150px;
+
+    gap:25px;
+
+  }
+
+  .bracket-side{
+    gap:18px;
+  }
+
+  .bracket-match{
+    width:180px;
+    padding:14px;
+  }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:992px){
+
+  .fifa-bracket{
+
+    min-width:1350px;
+
+    padding:20px;
+
+  }
+
 }
 
 /* =========================
@@ -1130,113 +1174,22 @@ a,
 
 @media(max-width:768px){
 
+  #knockout-container{
+    overflow-x:auto;
+  }
+
   .fifa-bracket{
 
-    min-width:700px;
+    min-width:1450px;
 
-    gap:8px;
+    padding:20px 15px;
 
-    padding:6px 4px;
   }
 
-  .bracket-side{
-    gap:6px;
+  .bracket-match{
+
+    width:200px;
+
   }
 
-  .round-16{
-    gap:6px;
-  }
-
-  .round-8{
-    gap:24px;
-  }
-
-  .round-4{
-    gap:52px;
-  }
-
-  .round-2{
-    gap:110px;
-  }
-
-  .bracket-match,
-  .empty-match{
-
-    width:92px;
-    min-height:50px;
-
-    padding:4px;
-  }
-
-  .bracket-team{
-    font-size:.48rem;
-  }
-
-  .bracket-score{
-    font-size:.62rem;
-  }
-
-  .bracket-info{
-    font-size:13px;
-  }
-
-  .final-title{
-    font-size:1rem;
-  }
-
-}
-
-
-.fifa-bracket{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:80px;
-  min-width:2200px;
-  padding:40px;
-}
-
-.bracket-side{
-  display:flex;
-  gap:40px;
-  align-items:center;
-}
-
-.round{
-  display:flex;
-  flex-direction:column;
-}
-
-.round-16{
-  gap:22px;
-}
-
-.round-8{
-  gap:120px;
-}
-
-.round-4{
-  gap:260px;
-}
-
-.round-2{
-  gap:540px;
-}
-
-.final-column{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-}
-
-.final-title{
-  font-size:2rem;
-  font-weight:900;
-  margin-bottom:30px;
-}
-
-.bracket-match{
-  width:220px;
-  min-height:150px;
 }
