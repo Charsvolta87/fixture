@@ -796,173 +796,137 @@ a,
 
 
 /* ========================= */
-/* BRACKET FIFA STYLE */
+/* FIFA BRACKET REAL */
 /* ========================= */
 
 .bracket-wrapper{
-
   width:100%;
   overflow-x:auto;
-  overflow-y:hidden;
-
-  padding-bottom:30px;
-
-  -webkit-overflow-scrolling:touch;
-
+  padding:40px 0;
 }
 
 .bracket{
-
+  min-width:1700px;
   display:flex;
-  gap:70px;
-
-  min-width:1400px;
-
-  align-items:flex-start;
-
-  padding:20px 10px;
-
+  justify-content:center;
+  align-items:center;
+  gap:80px;
 }
+
+/* COLUMNAS */
 
 .bracket-round{
-
   display:flex;
   flex-direction:column;
-  gap:24px;
-
-  min-width:260px;
-
+  position:relative;
 }
+
+/* TITULOS */
 
 .bracket-round-title{
-
+  text-align:center;
+  margin-bottom:30px;
   font-family:'Bebas Neue',sans-serif;
-
   font-size:2rem;
-
   letter-spacing:2px;
-
-  margin-bottom:10px;
-
   color:white;
-
 }
 
+/* CARDS */
+
 .bracket-match{
-
-  position:relative;
-
+  width:220px;
   background:
     linear-gradient(
       180deg,
-      rgba(255,255,255,.06),
+      rgba(255,255,255,.08),
       rgba(255,255,255,.03)
     );
 
   border:1px solid rgba(255,255,255,.08);
-
-  border-radius:22px;
-
-  padding:18px;
-
+  border-radius:18px;
+  padding:14px;
+  position:relative;
   backdrop-filter:blur(14px);
-
-  min-height:220px;
-
-  transition:.3s;
-
 }
 
-.bracket-match:hover{
-
-  transform:translateY(-5px);
-
-  border-color:rgba(255,255,255,.18);
-
-}
-
-.match-top{
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  margin-bottom:14px;
-
-  color:var(--muted);
-
-  font-size:.85rem;
-
-  font-weight:700;
-
-}
+/* EQUIPOS */
 
 .bracket-team{
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  text-align:center;
-
-  padding:14px;
-
-  border-radius:14px;
-
   background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.06);
-
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:12px;
+  padding:12px;
   font-weight:800;
-
-  font-size:1.1rem;
-
+  text-align:center;
+  margin-bottom:10px;
 }
 
 .bracket-score{
-
   text-align:center;
-
-  font-size:1.6rem;
-
+  font-size:1.4rem;
   font-weight:900;
-
-  margin:14px 0;
-
-  color:white;
-
+  margin:10px 0;
 }
 
 .bracket-info{
-
-  margin-top:18px;
-
+  margin-top:12px;
+  text-align:center;
+  font-size:.8rem;
   color:var(--muted);
-
-  font-size:.9rem;
-
-  line-height:1.6;
-
+  line-height:1.5;
 }
+
+/* ESPACIADOS REALES */
+
+.bracket-round:nth-child(1){
+  gap:40px;
+}
+
+.bracket-round:nth-child(2){
+  gap:120px;
+  margin-top:80px;
+}
+
+.bracket-round:nth-child(3){
+  gap:260px;
+  margin-top:180px;
+}
+
+.bracket-round:nth-child(4){
+  gap:540px;
+  margin-top:340px;
+}
+
+.bracket-round:nth-child(5){
+  justify-content:center;
+}
+
+/* LINEAS */
+
+.bracket-match::after{
+  content:"";
+  position:absolute;
+  right:-40px;
+  top:50%;
+  width:40px;
+  height:2px;
+  background:rgba(255,255,255,.25);
+}
+
+/* SACAR LINEA FINAL */
+
+.bracket-round:last-child .bracket-match::after{
+  display:none;
+}
+
+/* MOBILE */
 
 @media(max-width:768px){
 
   .bracket{
-
-    gap:40px;
-
-    min-width:1200px;
-
-  }
-
-  .bracket-round{
-
-    min-width:220px;
-
+    justify-content:flex-start;
+    padding-left:20px;
   }
 
 }
