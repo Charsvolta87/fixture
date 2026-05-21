@@ -725,7 +725,7 @@ a,
 /* LEFT */
 
 .r16.left{
-  left:-50px;
+  left:-150px;
   top:90px;
   gap:38px;
 }
@@ -750,7 +750,7 @@ a,
 /* RIGHT */
 
 .r16.right{
-  right:-50px;
+  right:-150px;
   top:90px;
   gap:38px;
 }
