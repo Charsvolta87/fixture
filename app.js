@@ -418,6 +418,7 @@ function renderKnockout(){
 
         <div class="bracket-info">
           ${match.date}<br>
+          ${match.timeAR}<br>
           ${match.city}
         </div>
 
