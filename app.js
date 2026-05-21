@@ -53,9 +53,15 @@ const flags = {
   "República Democrática del Congo":"cd"
 
 };
+
+const knockoutContainer =
+  document.getElementById(
+    "knockout-container"
+  );
+
 function getFlag(team){
 
-    const code = flags[team];
+  const code = flags[team];
 
   return `
     <img
@@ -67,11 +73,6 @@ function getFlag(team){
 
 }
 
-const knockoutContainer =
-  document.getElementById(
-    "knockout-container"
-  );
-  
 const groupsContainer = document.getElementById("groups-container");
 const matchesContainer = document.getElementById("matches-container");
 let currentGroup = "ALL";
@@ -436,7 +437,7 @@ function renderKnockout(){
 
             <div class="teams">
 
-              <div class="team">
+              <div class="team knockout-team">
                 ${match.home}
               </div>
 
@@ -541,6 +542,7 @@ tabButtons.forEach(button => {
     renderGroups();
     renderMatches();
     renderKnockout();
+    startCountdown();
     
 
   });

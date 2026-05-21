@@ -65,7 +65,7 @@ const knockout = [
     "id": 78,
     "round": "DIECISEISAVOS",
     "home": "2E",
-    "away": "2C",
+    "away": "2I",
     "awayOptions": [],
     "homeScore": null,
     "awayScore": null,
@@ -232,7 +232,7 @@ const knockout = [
       "3E",
       "3F",
       "3G",
-      "I3",
+      "3I",
       "3J"
     ],
     "homeScore": null,
