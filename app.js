@@ -79,7 +79,9 @@ let currentGroup = "ALL";
 
 renderGroups();
 renderMatches();
+renderKnockout();
 startCountdown();
+
 
 function renderGroups(){
 
@@ -542,8 +544,6 @@ tabButtons.forEach(button => {
     renderGroups();
     renderMatches();
     renderKnockout();
-    startCountdown();
-    
 
   });
 
