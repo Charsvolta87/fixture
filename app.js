@@ -77,32 +77,183 @@ startCountdown();
 
 function renderGroups(){
 
+  groupsContainer.innerHTML = "";
+
   Object.entries(groupsData).forEach(([groupName, group]) => {
 
-    const card = document.createElement("div");
-    card.className = "group-card";
+    const standings = {};
 
-    let teamsHTML = "";
+    // =========================
+    // Crear estructura inicial
+    // =========================
 
     group.teams.forEach(team => {
 
-      teamsHTML += `
-        <div class="group-team">
-          ${getFlag(team)}
-          ${team}
-        </div>
+      standings[team] = {
+        team,
+        pts:0,
+        pj:0,
+        g:0,
+        e:0,
+        p:0,
+        gf:0,
+        gc:0,
+        dif:0
+      };
+
+    });
+
+    // =========================
+    // Procesar partidos
+    // =========================
+
+    matches
+      .filter(match => match.group === groupName)
+      .forEach(match => {
+
+        if(
+          match.homeScore === null ||
+          match.awayScore === null
+        ) return;
+
+        const home =
+          standings[match.home];
+
+        const away =
+          standings[match.away];
+
+        // PJ
+        home.pj++;
+        away.pj++;
+
+        // GOLES
+        home.gf += match.homeScore;
+        home.gc += match.awayScore;
+
+        away.gf += match.awayScore;
+        away.gc += match.homeScore;
+
+        // DIF
+        home.dif = home.gf - home.gc;
+        away.dif = away.gf - away.gc;
+
+        // RESULTADO
+
+        if(match.homeScore > match.awayScore){
+
+          home.g++;
+          away.p++;
+
+          home.pts += 3;
+
+        }
+
+        else if(match.homeScore < match.awayScore){
+
+          away.g++;
+          home.p++;
+
+          away.pts += 3;
+
+        }
+
+        else{
+
+          home.e++;
+          away.e++;
+
+          home.pts += 1;
+          away.pts += 1;
+
+        }
+
+      });
+
+    // =========================
+    // Ordenar tabla
+    // =========================
+
+    const sorted =
+      Object.values(standings)
+      .sort((a,b) => {
+
+        if(b.pts !== a.pts)
+          return b.pts - a.pts;
+
+        return b.dif - a.dif;
+
+      });
+
+    // =========================
+    // Render filas
+    // =========================
+
+    let rows = "";
+
+    sorted.forEach((team,index) => {
+
+      const qualified =
+        index < 2
+        ? "qualified"
+        : "";
+
+      rows += `
+        <tr class="${qualified}">
+
+          <td class="team-cell">
+            ${getFlag(team.team)}
+            ${team.team}
+          </td>
+
+          <td>${team.pts}</td>
+          <td>${team.pj}</td>
+          <td>${team.g}</td>
+          <td>${team.e}</td>
+          <td>${team.p}</td>
+          <td>${team.gf}</td>
+          <td>${team.gc}</td>
+          <td>${team.dif}</td>
+
+        </tr>
       `;
 
     });
+
+    // =========================
+    // CARD
+    // =========================
+
+    const card =
+      document.createElement("div");
+
+    card.className = "group-card";
 
     card.innerHTML = `
       <div class="group-title">
         Grupo ${groupName}
       </div>
 
-      <div class="group-teams">
-        ${teamsHTML}
-      </div>
+      <table class="standings">
+
+        <thead>
+          <tr>
+            <th>Equipo</th>
+            <th>PTS</th>
+            <th>PJ</th>
+            <th>G</th>
+            <th>E</th>
+            <th>P</th>
+            <th>GF</th>
+            <th>GC</th>
+            <th>DIF</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          ${rows}
+        </tbody>
+
+      </table>
     `;
 
     groupsContainer.appendChild(card);
@@ -241,6 +392,7 @@ tabButtons.forEach(button => {
       button.dataset.group;
 
     renderMatches();
+    renderGroups();
 
   });
 

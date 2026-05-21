@@ -182,12 +182,21 @@ nav a:hover{
 }
 
 .group-card{
-  background:var(--card);
-  border:1px solid var(--border);
+  position:relative;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.06),
+      rgba(255,255,255,.03)
+    );
+  border:
+    1px solid rgba(255,255,255,.08);
   border-radius:24px;
-  padding:25px;
-  backdrop-filter:blur(18px);
+  padding:24px;
+  backdrop-filter:blur(14px);
+  overflow:hidden;
   transition:.35s;
+  min-width:0;
 }
 
 .group-card:hover{
@@ -510,4 +519,58 @@ body::before{
   background:rgba(255,255,255,.06);
 
   border-color:rgba(255,255,255,.08);
+}
+
+
+
+.standings{
+  width:100%;
+
+  border-collapse:collapse;
+
+  margin-top:20px;
+
+  overflow:hidden;
+}
+
+.standings th{
+  padding:14px 10px;
+
+  font-size:.75rem;
+
+  letter-spacing:1px;
+
+  color:rgba(255,255,255,.65);
+
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.standings td{
+  padding:14px 10px;
+
+  text-align:center;
+
+  border-bottom:1px solid rgba(255,255,255,.05);
+
+  font-weight:600;
+}
+
+.team-cell{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  text-align:left;
+}
+
+.standings tr{
+  transition:.25s;
+}
+
+.standings tr:hover{
+  background:rgba(255,255,255,.04);
+}
+
+.qualified{
+  background:rgba(0,195,255,.06);
 }
