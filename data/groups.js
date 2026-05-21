@@ -115,7 +115,7 @@ const groupsData = {
     matches: [],
     teams: [
       "Portugal",
-      "República Democrática del Congo",
+      "República Democrática\ndel Congo",
       "Uzbekistán",
       "Colombia"
     ]
