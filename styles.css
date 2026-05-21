@@ -395,3 +395,16 @@ body::before{
   pointer-events:none;
   z-index:-1;
 }
+
+
+.group-badge{
+  display:inline-block;
+  margin-bottom:18px;
+  padding:6px 12px;
+  border-radius:100px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  font-size:.8rem;
+  font-weight:700;
+  letter-spacing:1px;
+}

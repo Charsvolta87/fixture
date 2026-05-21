@@ -72,53 +72,60 @@ function renderGroups(){
 
 function renderMatches(){
 
-  Object.values(groupsData).forEach(group => {
+  matches.forEach(match => {
 
-    group.matches.forEach(match => {
+    const card = document.createElement("div");
+    card.className = "match-card";
 
-      const card = document.createElement("div");
-      card.className = "match-card";
+    const statusClass =
+      match.status === "finished"
+      ? "status-finished"
+      : "status-upcoming";
 
-      const statusClass =
-        match.status === "finished"
-        ? "status-finished"
-        : "status-upcoming";
+    const statusText =
+      match.status === "finished"
+      ? "FINALIZADO"
+      : "PRÓXIMO";
 
-      const statusText =
-        match.status === "finished"
-        ? "FINALIZADO"
-        : "PRÓXIMO";
+    const score =
+      match.homeScore !== null
+      ? `${match.homeScore} - ${match.awayScore}`
+      : "VS";
 
-      card.innerHTML = `
-        <div class="match-status ${statusClass}">
-          ${statusText}
+    card.innerHTML = `
+      <div class="match-status ${statusClass}">
+        ${statusText}
+      </div>
+
+      <div class="group-badge">
+        GRUPO ${match.group}
+      </div>
+
+      <div class="teams">
+
+        <div class="team">
+          ${match.home}
         </div>
 
-        <div class="teams">
-
-          <div class="team">
-            ${match.home}
-          </div>
-
-          <div class="score">
-            ${match.homeScore} - ${match.awayScore}
-          </div>
-
-          <div class="team">
-            ${match.away}
-          </div>
-
+        <div class="score">
+          ${score}
         </div>
 
-        <div class="match-info">
-          🏟 ${match.stadium}<br>
-          📅 ${match.date} - ${match.time}
+        <div class="team">
+          ${match.away}
         </div>
-      `;
 
-      matchesContainer.appendChild(card);
+      </div>
 
-    });
+      <div class="match-info">
+        🏟 ${match.stadium}<br>
+        🌎 ${match.city}<br>
+        📅 ${match.date}<br>
+        🕒 ${match.timeAR} (ARG)
+      </div>
+    `;
+
+    matchesContainer.appendChild(card);
 
   });
 
