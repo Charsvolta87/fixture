@@ -349,7 +349,13 @@ function renderMatches(){
   });
 
 }
+function getMatchById(id){
 
+  return knockout.find(
+    match => match.id === id
+  );
+
+}
 function renderKnockout(){
 
   const getMatch = id =>
@@ -491,67 +497,148 @@ function renderKnockout(){
 
   knockoutContainer.innerHTML = `
 
-    <div class="fifa-bracket">
+<div class="fifa-stage">
 
-      <!-- LEFT -->
+  <!-- BACKGROUND TROPHY -->
+  <div class="fifa-center-bg"></div>
 
-      <div class="bracket-side left-side">
+  <!-- SVG LINES -->
+  <svg class="bracket-lines">
 
-        <div class="round round-16">
-          ${left16.map(createMatchHTML).join("")}
-        </div>
+    <!-- LEFT -->
 
-        <div class="round round-8">
-          ${left8.map(createMatchHTML).join("")}
-        </div>
+    <path d="M170 170 H240 V260 H310" />
+    <path d="M170 430 H240 V340 H310" />
 
-        <div class="round round-4">
-          ${left4.map(createMatchHTML).join("")}
-        </div>
+    <path d="M170 760 H240 V850 H310" />
+    <path d="M170 1020 H240 V930 H310" />
 
-        <div class="round round-2">
-          ${leftSemi.map(createMatchHTML).join("")}
-        </div>
+    <path d="M500 300 H580 V560 H660" />
+    <path d="M500 880 H580 V640 H660" />
 
+    <path d="M850 600 H930 V600 H1010" />
+
+    <!-- RIGHT -->
+
+    <path d="M1730 170 H1660 V260 H1590" />
+    <path d="M1730 430 H1660 V340 H1590" />
+
+    <path d="M1730 760 H1660 V850 H1590" />
+    <path d="M1730 1020 H1660 V930 H1590" />
+
+    <path d="M1400 300 H1320 V560 H1240" />
+    <path d="M1400 880 H1320 V640 H1240" />
+
+    <path d="M1050 600 H1130 V600 H1210" />
+
+  </svg>
+
+  <!-- LEFT SIDE -->
+
+  <div class="round left r16">
+
+    ${createMatchHTML(getMatchById(74))}
+    ${createMatchHTML(getMatchById(77))}
+
+    ${createMatchHTML(getMatchById(73))}
+    ${createMatchHTML(getMatchById(75))}
+
+    ${createMatchHTML(getMatchById(83))}
+    ${createMatchHTML(getMatchById(84))}
+
+    ${createMatchHTML(getMatchById(81))}
+    ${createMatchHTML(getMatchById(82))}
+
+  </div>
+
+  <div class="round left r8">
+
+    ${createMatchHTML(getMatchById(89))}
+    ${createMatchHTML(getMatchById(90))}
+
+    ${createMatchHTML(getMatchById(93))}
+    ${createMatchHTML(getMatchById(94))}
+
+  </div>
+
+  <div class="round left r4">
+
+    ${createMatchHTML(getMatchById(97))}
+    ${createMatchHTML(getMatchById(98))}
+
+  </div>
+
+  <div class="round left r2">
+
+    ${createMatchHTML(getMatchById(101))}
+
+  </div>
+
+  <!-- FINAL -->
+
+  <div class="final-area">
+
+    <div class="final-title">
+      FINAL
+    </div>
+
+    ${createMatchHTML(getMatchById(104))}
+
+    <div class="third-place">
+
+      <div class="third-title">
+        TERCER PUESTO
       </div>
 
-      <!-- FINAL -->
-
-      <div class="final-column">
-
-        <div class="final-title">
-          FINAL
-        </div>
-
-        ${createMatchHTML(finalMatch)}
-
-      </div>
-
-      <!-- RIGHT -->
-
-      <div class="bracket-side right-side">
-
-        <div class="round round-2">
-          ${rightSemi.map(createMatchHTML).join("")}
-        </div>
-
-        <div class="round round-4">
-          ${right4.map(createMatchHTML).join("")}
-        </div>
-
-        <div class="round round-8">
-          ${right8.map(createMatchHTML).join("")}
-        </div>
-
-        <div class="round round-16">
-          ${right16.map(createMatchHTML).join("")}
-        </div>
-
-      </div>
+      ${createMatchHTML(getMatchById(103))}
 
     </div>
 
-  `;
+  </div>
+
+  <!-- RIGHT -->
+
+  <div class="round right r2">
+
+    ${createMatchHTML(getMatchById(102))}
+
+  </div>
+
+  <div class="round right r4">
+
+    ${createMatchHTML(getMatchById(99))}
+    ${createMatchHTML(getMatchById(100))}
+
+  </div>
+
+  <div class="round right r8">
+
+    ${createMatchHTML(getMatchById(91))}
+    ${createMatchHTML(getMatchById(92))}
+
+    ${createMatchHTML(getMatchById(95))}
+    ${createMatchHTML(getMatchById(96))}
+
+  </div>
+
+  <div class="round right r16">
+
+    ${createMatchHTML(getMatchById(76))}
+    ${createMatchHTML(getMatchById(78))}
+
+    ${createMatchHTML(getMatchById(79))}
+    ${createMatchHTML(getMatchById(80))}
+
+    ${createMatchHTML(getMatchById(86))}
+    ${createMatchHTML(getMatchById(88))}
+
+    ${createMatchHTML(getMatchById(85))}
+    ${createMatchHTML(getMatchById(87))}
+
+  </div>
+
+</div>
+`;
 
 }
 
