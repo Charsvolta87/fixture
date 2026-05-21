@@ -483,3 +483,31 @@ body::before{
 
   font-weight:700;
 }
+
+
+
+.group-team{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  padding:12px 14px;
+
+  border-radius:12px;
+
+  background:rgba(255,255,255,.03);
+
+  border:1px solid rgba(255,255,255,.04);
+
+  transition:.25s;
+}
+
+
+
+.group-team:hover{
+  transform:translateX(4px);
+
+  background:rgba(255,255,255,.06);
+
+  border-color:rgba(255,255,255,.08);
+}

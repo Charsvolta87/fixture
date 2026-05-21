@@ -88,6 +88,7 @@ function renderGroups(){
 
       teamsHTML += `
         <div class="group-team">
+          ${getFlag(team)}
           ${team}
         </div>
       `;
