@@ -245,6 +245,21 @@ nav a:hover{
   border-top:1px solid rgba(255,255,255,.05);
 }
 
+.group-table-wrapper{
+  width:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;
+  padding-bottom:8px;
+  scrollbar-width:none;
+}
+
+.group-table-wrapper::-webkit-scrollbar{
+  display:none;
+}
+
+
+
 .matches-grid{
   display:grid;
   grid-template-columns:1fr;
