@@ -55,6 +55,11 @@ const flags = {
 };
 function getFlag(team){
 
+  const knockoutContainer =
+  document.getElementById(
+    "knockout-container"
+  );
+
   const code = flags[team];
 
   return `
@@ -342,6 +347,145 @@ function renderMatches(){
 
 }
 
+function renderKnockout(){
+
+  knockoutContainer.innerHTML = "";
+
+  const rounds = {};
+
+  // =========================
+  // AGRUPAR POR RONDA
+  // =========================
+
+  knockout.forEach(match => {
+
+    if(!rounds[match.round]){
+
+      rounds[match.round] = [];
+
+    }
+
+    rounds[match.round].push(match);
+
+  });
+
+  // =========================
+  // RENDER
+  // =========================
+
+  Object.entries(rounds)
+    .forEach(([roundName,matches]) => {
+
+      const round =
+        document.createElement("div");
+
+      round.className =
+        "knockout-round";
+
+      let matchesHTML = "";
+
+      matches.forEach(match => {
+
+        let awayTeam =
+          match.away;
+
+        // =========================
+        // VARIABLES FIFA
+        // =========================
+
+        if(
+          !awayTeam &&
+          match.awayOptions.length
+        ){
+
+          awayTeam =
+            `3º(${match.awayOptions
+              .map(team =>
+                team.replace("3","")
+              )
+              .join("/")})`;
+
+        }
+
+        const score =
+          match.homeScore !== null
+          ? `${match.homeScore} - ${match.awayScore}`
+          : "VS";
+
+        matchesHTML += `
+
+          <div class="knockout-card">
+
+            <div class="match-status
+              ${match.status === "finished"
+                ? "status-finished"
+                : "status-upcoming"
+              }">
+
+              ${
+                match.status === "finished"
+                ? "FINALIZADO"
+                : "PRÓXIMO"
+              }
+
+            </div>
+
+            <div class="group-badge">
+              PARTIDO ${match.id}
+            </div>
+
+            <div class="teams">
+
+              <div class="team">
+                ${match.home}
+              </div>
+
+              <div class="score">
+                ${score}
+              </div>
+
+              <div class="team">
+                ${awayTeam}
+              </div>
+
+            </div>
+
+            <div class="match-info">
+
+              🏟 ${match.stadium}<br>
+
+              🌎 ${match.city}<br>
+
+              📅 ${match.date}<br>
+
+              🕒 ${match.timeAR} (ARG)
+
+            </div>
+
+          </div>
+
+        `;
+
+      });
+
+      round.innerHTML = `
+
+        <div class="knockout-title">
+          ${roundName}
+        </div>
+
+        <div class="knockout-grid">
+          ${matchesHTML}
+        </div>
+
+      `;
+
+      knockoutContainer.appendChild(round);
+
+    });
+
+}
+
 function startCountdown(){
 
   const targetDate = new Date("2026-06-11T00:00:00");
@@ -394,8 +538,10 @@ tabButtons.forEach(button => {
     currentGroup =
       button.dataset.group;
 
-    renderMatches();
     renderGroups();
+    renderMatches();
+    renderKnockout();
+    
 
   });
 

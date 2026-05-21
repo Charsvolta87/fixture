@@ -693,3 +693,53 @@ a,
   border-color:
     rgba(255,255,255,.12);
 }
+
+
+
+
+#knockout-container{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:50px;
+}
+
+.knockout-round{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:22px;
+}
+
+.knockout-title{
+
+  font-family:'Bebas Neue';
+
+  font-size:2.2rem;
+
+  letter-spacing:1px;
+}
+
+.knockout-grid{
+
+  display:grid;
+
+  grid-template-columns:1fr;
+
+  gap:18px;
+}
+
+@media(min-width:900px){
+
+  .knockout-grid{
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+  }
+
+}

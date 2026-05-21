@@ -101,11 +101,11 @@ const knockout = [
     "home": "1A",
     "away": null,
     "awayOptions": [
-      "3",
-      "C3",
-      "E3",
-      "F3",
-      "H3I"
+      "3C",
+      "3E",
+      "3F",
+      "3H",
+      "3I"
     ],
     "homeScore": null,
     "awayScore": null,
