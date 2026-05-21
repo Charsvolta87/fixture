@@ -931,30 +931,42 @@ a,
 
 }
 
-/* ========================= */
-/* FIFA REAL BRACKET */
-/* ========================= */
+/* =========================
+   FIFA BRACKET
+========================= */
+
+#knockout-container{
+  overflow-x:auto;
+  padding-bottom:30px;
+}
 
 .fifa-bracket{
   min-width:1800px;
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:80px;
-  padding:40px;
+  gap:60px;
+  padding:40px 20px;
 }
+
+/* =========================
+   SIDES
+========================= */
 
 .bracket-side{
   display:flex;
-  gap:60px;
+  align-items:center;
+  gap:50px;
 }
+
+/* =========================
+   ROUNDS
+========================= */
 
 .round{
   display:flex;
   flex-direction:column;
 }
-
-/* ESPACIADOS */
 
 .round-16{
   gap:30px;
@@ -962,29 +974,24 @@ a,
 
 .round-8{
   gap:120px;
-  margin-top:80px;
 }
 
 .round-4{
   gap:260px;
-  margin-top:180px;
 }
 
 .round-2{
   gap:540px;
-  margin-top:340px;
 }
 
-/* PARTIDOS */
+/* =========================
+   MATCH CARD
+========================= */
 
 .bracket-match,
 .empty-match{
-
-  width:220px;
+  width:230px;
   min-height:120px;
-
-  border-radius:18px;
-
   background:
     linear-gradient(
       180deg,
@@ -993,57 +1000,61 @@ a,
     );
 
   border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+
+  backdrop-filter:blur(12px);
 
   padding:14px;
 
-  backdrop-filter:blur(12px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 
   position:relative;
 }
 
 .empty-match{
-  opacity:.25;
+  opacity:.35;
 }
 
-/* EQUIPOS */
+/* =========================
+   TEAM
+========================= */
 
 .bracket-team{
-
-  background:rgba(255,255,255,.06);
-
+  background:rgba(255,255,255,.05);
   border-radius:12px;
-
-  padding:12px;
-
+  padding:10px;
   text-align:center;
-
-  font-weight:800;
-
-  margin-bottom:10px;
+  font-weight:700;
+  margin:4px 0;
 }
 
 .bracket-score{
   text-align:center;
-  font-size:1.4rem;
+  font-size:1.2rem;
   font-weight:900;
-  margin:10px 0;
+  margin:8px 0;
 }
 
 .bracket-info{
-  margin-top:12px;
+  margin-top:10px;
   text-align:center;
-  font-size:.8rem;
   color:var(--muted);
+  font-size:.8rem;
 }
 
 .match-id{
-  font-size:.8rem;
-  color:#7dd3fc;
-  margin-bottom:10px;
-  font-weight:700;
+  position:absolute;
+  top:10px;
+  right:12px;
+  opacity:.5;
+  font-size:.75rem;
 }
 
-/* FINAL */
+/* =========================
+   FINAL
+========================= */
 
 .final-column{
   display:flex;
@@ -1058,14 +1069,15 @@ a,
   letter-spacing:4px;
 }
 
-.final-match{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
+/* =========================
+   MOBILE
+========================= */
 
-/* MOBILE */
+@media(max-width:768px){
 
-#knockout-container{
-  overflow-x:auto;
+  .fifa-bracket{
+    justify-content:flex-start;
+    padding-bottom:60px;
+  }
+
 }
