@@ -256,6 +256,7 @@ function renderGroups(){
         </tbody>
 
       </table>
+      </div>
     `;
 
     groupsContainer.appendChild(card);
