@@ -1,0 +1,141 @@
+<!-- ========================= -->
+<!-- index.html -->
+<!-- ========================= -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FIFA World Cup 2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- BACKGROUND -->
+  <div class="bg-overlay"></div>
+  <div class="animated-gradient"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      WORLD CUP 2026
+    </div>
+
+    <nav>
+      <a href="#groups">Grupos</a>
+      <a href="#matches">Partidos</a>
+      <a href="#knockout">Eliminatorias</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <p class="hero-subtitle">
+        FIFA WORLD CUP
+      </p>
+
+      <h1>
+        UNITED 2026
+      </h1>
+
+      <p class="hero-description">
+        Fixture oficial del Mundial FIFA 2026.
+        Resultados, grupos, estadísticas y eliminatorias.
+      </p>
+
+      <div class="countdown" id="countdown">
+        Loading...
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- GROUPS -->
+  <section id="groups" class="section">
+
+    <div class="section-header">
+      <h2>FASE DE GRUPOS</h2>
+      <p>Calendario y posiciones</p>
+    </div>
+
+    <div id="groups-container" class="groups-grid"></div>
+
+  </section>
+
+  <!-- MATCHES -->
+  <section id="matches" class="section">
+
+    <div class="section-header">
+      <h2>PARTIDOS</h2>
+      <p>Todos los encuentros</p>
+    </div>
+
+    <div id="matches-container" class="matches-grid"></div>
+
+  </section>
+
+  <!-- KNOCKOUT -->
+  <section id="knockout" class="section">
+
+    <div class="section-header">
+      <h2>ELIMINATORIAS</h2>
+      <p>Camino a la final</p>
+    </div>
+
+    <div class="bracket">
+
+      <div class="bracket-round">
+        <h3>Octavos</h3>
+
+        <div class="bracket-match">
+          <span>1A</span>
+          <span>2B</span>
+        </div>
+
+        <div class="bracket-match">
+          <span>1C</span>
+          <span>2D</span>
+        </div>
+      </div>
+
+      <div class="bracket-round">
+        <h3>Cuartos</h3>
+
+        <div class="bracket-match">
+          <span>Ganador</span>
+          <span>Ganador</span>
+        </div>
+      </div>
+
+      <div class="bracket-round final-round">
+        <h3>FINAL</h3>
+
+        <div class="bracket-final">
+          🏆
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>World Cup 2026 © Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="data/groups.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
