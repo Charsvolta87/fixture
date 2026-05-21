@@ -731,7 +731,7 @@ a,
 }
 
 .r8.left{
-  left:320px;
+  left:0px;
   top:190px;
   gap:180px;
 }
@@ -756,7 +756,7 @@ a,
 }
 
 .r8.right{
-  right:320px;
+  right:0px;
   top:190px;
   gap:180px;
 }
