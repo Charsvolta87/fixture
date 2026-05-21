@@ -201,7 +201,7 @@ nav a:hover{
   
 }
 
-#groups-container{#groups-container{
+#groups-container{
   display:grid;
   grid-template-columns:1fr;
   gap:20px;
