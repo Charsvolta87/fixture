@@ -1,0 +1,50 @@
+/* ========================= */
+/* admin/admin.css */
+/* ========================= */
+
+body{
+  background:#07111f;
+  color:white;
+  font-family:Arial;
+  padding:40px;
+}
+
+.admin-panel{
+  max-width:1100px;
+  margin:auto;
+}
+
+h1{
+  margin-bottom:40px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  margin-bottom:30px;
+}
+
+input,
+select{
+  padding:14px;
+  border:none;
+  border-radius:10px;
+}
+
+button{
+  padding:15px 25px;
+  border:none;
+  margin-right:15px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+pre{
+  margin-top:40px;
+  background:#111c2d;
+  padding:20px;
+  border-radius:15px;
+  overflow:auto;
+}
