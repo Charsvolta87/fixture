@@ -643,166 +643,285 @@ a,
 
 }
 
+
+
+
 /* ===================================== */
-/* FIFA REAL BRACKET */
+/* FIFA STAGE REAL */
 /* ===================================== */
 
 #knockout-container{
   width:100%;
   overflow-x:auto;
   overflow-y:hidden;
-  padding:20px 0 60px;
+  padding:40px 0;
 }
 
-.fifa-bracket{
+/* ===================================== */
+/* STAGE */
+/* ===================================== */
 
-  min-width:1650px;
-  min-height:950px;
-
-  display:grid;
-
-  grid-template-columns:
-
-    220px
-    220px
-    220px
-    220px
-    240px
-    220px
-    220px
-    220px
-    220px;
+.fifa-stage{
 
   position:relative;
 
+  width:1920px;
+  height:1200px;
+
+  margin:auto;
+
+  display:flex;
   align-items:center;
   justify-content:center;
 
-  gap:0;
-
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(0,80,180,.15),
+      transparent 60%
+    );
 }
 
 /* ===================================== */
-/* COLUMNAS */
+/* CENTER BG */
 /* ===================================== */
 
-.bracket-column{
-  position:relative;
+.fifa-center-bg{
+
+  position:absolute;
+
+  inset:0;
+
+  background-image:
+    url("imagenes/trophy-bg.png");
+
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:320px;
+
+  opacity:.08;
+
+  pointer-events:none;
+}
+
+/* ===================================== */
+/* SVG LINES */
+/* ===================================== */
+
+.bracket-lines{
+
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  pointer-events:none;
+}
+
+.bracket-lines path{
+
+  fill:none;
+
+  stroke:
+    rgba(255,255,255,.18);
+
+  stroke-width:3;
+}
+
+/* ===================================== */
+/* ROUNDS */
+/* ===================================== */
+
+.round{
+
+  position:absolute;
 
   display:flex;
   flex-direction:column;
-  justify-content:space-around;
-
-  height:100%;
 }
 
-/* ===================================== */
-/* ESPACIADOS VERTICALES */
-/* ===================================== */
+/* LEFT */
 
-.col-last16{
+.r16.left{
+  left:20px;
+  top:90px;
   gap:38px;
 }
 
-.col-octavos{
-  gap:120px;
+.r8.left{
+  left:320px;
+  top:190px;
+  gap:180px;
 }
 
-.col-cuartos{
-  gap:250px;
+.r4.left{
+  left:620px;
+  top:350px;
+  gap:380px;
 }
 
-.col-semis{
-  gap:520px;
+.r2.left{
+  left:920px;
+  top:520px;
 }
 
-.col-final{
-  justify-content:center;
-  align-items:center;
+/* RIGHT */
+
+.r16.right{
+  right:20px;
+  top:90px;
+  gap:38px;
+}
+
+.r8.right{
+  right:320px;
+  top:190px;
+  gap:180px;
+}
+
+.r4.right{
+  right:620px;
+  top:350px;
+  gap:380px;
+}
+
+.r2.right{
+  right:920px;
+  top:520px;
 }
 
 /* ===================================== */
-/* MATCH */
+/* FINAL AREA */
+/* ===================================== */
+
+.final-area{
+
+  position:absolute;
+
+  left:50%;
+  top:50%;
+
+  transform:
+    translate(-50%,-50%);
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  gap:30px;
+}
+
+.final-title{
+
+  font-family:'Bebas Neue',sans-serif;
+
+  font-size:4rem;
+
+  letter-spacing:4px;
+
+  color:white;
+}
+
+/* ===================================== */
+/* THIRD PLACE */
+/* ===================================== */
+
+.third-place{
+
+  margin-top:40px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  gap:14px;
+}
+
+.third-title{
+
+  font-size:1rem;
+
+  letter-spacing:2px;
+
+  color:#8ea4d2;
+
+  font-weight:700;
+}
+
+/* ===================================== */
+/* MATCH CARD */
 /* ===================================== */
 
 .bracket-match{
 
-  width:180px;
+  width:170px;
+
+  padding:12px;
+
+  border-radius:18px;
 
   background:
     linear-gradient(
       180deg,
-      rgba(14,27,60,.95),
-      rgba(5,12,30,.96)
+      rgba(11,24,54,.96),
+      rgba(4,10,24,.98)
     );
 
-  border:1px solid rgba(255,255,255,.08);
-
-  border-radius:18px;
-
-  padding:12px;
-
-  position:relative;
+  border:
+    1px solid rgba(255,255,255,.08);
 
   backdrop-filter:blur(10px);
 
   box-shadow:
-    0 0 0 1px rgba(255,255,255,.03),
-    0 15px 30px rgba(0,0,0,.35);
+    0 12px 30px rgba(0,0,0,.35);
 
   transition:.25s;
 }
 
 .bracket-match:hover{
 
-  transform:translateY(-3px);
+  transform:translateY(-4px);
 
   border-color:
-    rgba(255,255,255,.16);
-
+    rgba(255,255,255,.18);
 }
 
 /* ===================================== */
-/* TOP */
+/* MATCH INFO */
 /* ===================================== */
 
 .match-id{
 
   font-size:.55rem;
 
-  text-transform:uppercase;
-
-  letter-spacing:1px;
-
   color:#8ea4d2;
 
   margin-bottom:10px;
 
-  font-weight:700;
-}
+  font-weight:800;
 
-/* ===================================== */
-/* TEAMS */
-/* ===================================== */
+  letter-spacing:1px;
+}
 
 .bracket-team{
 
   height:34px;
 
-  border-radius:10px;
-
   display:flex;
   align-items:center;
   justify-content:center;
 
-  font-size:.82rem;
-  font-weight:800;
+  border-radius:10px;
 
   background:
     rgba(255,255,255,.05);
 
   border:
     1px solid rgba(255,255,255,.06);
+
+  font-size:.8rem;
+  font-weight:800;
 
   color:white;
 }
@@ -821,10 +940,6 @@ a,
   color:white;
 }
 
-/* ===================================== */
-/* INFO */
-/* ===================================== */
-
 .bracket-info{
 
   margin-top:10px;
@@ -839,107 +954,44 @@ a,
 }
 
 /* ===================================== */
-/* FINAL */
-/* ===================================== */
-
-.final-wrapper{
-
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-
-  gap:20px;
-}
-
-.final-title{
-
-  font-family:'Bebas Neue',sans-serif;
-
-  font-size:3rem;
-
-  letter-spacing:3px;
-
-  color:white;
-}
-
-/* ===================================== */
-/* CONNECTORS */
-/* ===================================== */
-
-.connector-right::after{
-
-  content:"";
-
-  position:absolute;
-
-  right:-40px;
-  top:50%;
-
-  width:40px;
-  height:2px;
-
-  background:
-    rgba(255,255,255,.28);
-}
-
-.connector-left::before{
-
-  content:"";
-
-  position:absolute;
-
-  left:-40px;
-  top:50%;
-
-  width:40px;
-  height:2px;
-
-  background:
-    rgba(255,255,255,.28);
-}
-
-/* ===================================== */
 /* RESPONSIVE */
 /* ===================================== */
 
-@media(max-width:1400px){
+@media(max-width:1600px){
 
-  .fifa-bracket{
+  .fifa-stage{
 
-    transform:scale(.88);
-    transform-origin:top left;
+    transform:scale(.82);
 
-    min-width:1500px;
+    transform-origin:top center;
+
+    height:980px;
   }
 
 }
 
-@media(max-width:1000px){
+@media(max-width:1200px){
 
-  .fifa-bracket{
+  .fifa-stage{
 
-    transform:scale(.72);
+    transform:scale(.65);
+
     transform-origin:top left;
 
-    min-width:1450px;
+    height:760px;
   }
 
 }
 
 @media(max-width:768px){
 
-  #knockout-container{
-    padding-bottom:10px;
-  }
+  .fifa-stage{
 
-  .fifa-bracket{
-
-    transform:scale(.58);
+    transform:scale(.45);
 
     transform-origin:top left;
 
-    min-width:1350px;
+    height:520px;
   }
 
 }
