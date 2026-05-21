@@ -654,7 +654,7 @@ a,
   width:100%;
   overflow-x:auto;
   overflow-y:hidden;
-  padding:40px 0;
+  padding:0px 0;
 }
 
 /* ===================================== */
@@ -662,18 +662,13 @@ a,
 /* ===================================== */
 
 .fifa-stage{
-
   position:relative;
-
   width:1920px;
   height:1200px;
-
   margin:auto;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   background:
     radial-gradient(
       circle at center,
@@ -687,20 +682,14 @@ a,
 /* ===================================== */
 
 .fifa-center-bg{
-
   position:absolute;
-
   inset:0;
-
   background-image:
     url("imagenes/trophy-bg.png");
-
   background-position:center;
   background-repeat:no-repeat;
   background-size:320px;
-
   opacity:.08;
-
   pointer-events:none;
 }
 
@@ -709,23 +698,17 @@ a,
 /* ===================================== */
 
 .bracket-lines{
-
   position:absolute;
   inset:0;
-
   width:100%;
   height:100%;
-
   pointer-events:none;
 }
 
 .bracket-lines path{
-
   fill:none;
-
   stroke:
     rgba(255,255,255,.18);
-
   stroke-width:3;
 }
 
@@ -734,9 +717,7 @@ a,
 /* ===================================== */
 
 .round{
-
   position:absolute;
-
   display:flex;
   flex-direction:column;
 }
@@ -796,30 +777,21 @@ a,
 /* ===================================== */
 
 .final-area{
-
   position:absolute;
-
   left:50%;
   top:50%;
-
   transform:
     translate(-50%,-50%);
-
   display:flex;
   flex-direction:column;
   align-items:center;
-
   gap:30px;
 }
 
 .final-title{
-
   font-family:'Bebas Neue',sans-serif;
-
   font-size:4rem;
-
   letter-spacing:4px;
-
   color:white;
 }
 
@@ -828,24 +800,17 @@ a,
 /* ===================================== */
 
 .third-place{
-
   margin-top:40px;
-
   display:flex;
   flex-direction:column;
   align-items:center;
-
   gap:14px;
 }
 
 .third-title{
-
   font-size:1rem;
-
   letter-spacing:2px;
-
   color:#8ea4d2;
-
   font-weight:700;
 }
 
@@ -854,13 +819,9 @@ a,
 /* ===================================== */
 
 .bracket-match{
-
   width:170px;
-
   padding:12px;
-
   border-radius:18px;
-
   background:
     linear-gradient(
       180deg,
@@ -870,19 +831,13 @@ a,
 
   border:
     1px solid rgba(255,255,255,.08);
-
   backdrop-filter:blur(10px);
-
   box-shadow:
     0 12px 30px rgba(0,0,0,.35);
-
   transition:.25s;
 }
-
 .bracket-match:hover{
-
   transform:translateY(-4px);
-
   border-color:
     rgba(255,255,255,.18);
 }
@@ -892,64 +847,43 @@ a,
 /* ===================================== */
 
 .match-id{
-
   font-size:.55rem;
-
   color:#8ea4d2;
-
   margin-bottom:10px;
-
   font-weight:800;
-
   letter-spacing:1px;
 }
 
 .bracket-team{
-
   height:34px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   border-radius:10px;
-
   background:
     rgba(255,255,255,.05);
-
   border:
     1px solid rgba(255,255,255,.06);
-
   font-size:.8rem;
   font-weight:800;
-
   color:white;
 }
 
 .bracket-score{
-
   height:38px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   font-size:1rem;
   font-weight:900;
-
   color:white;
 }
 
 .bracket-info{
-
   margin-top:10px;
-
   text-align:center;
-
   font-size:.58rem;
-
   line-height:1.5;
-
   color:#8ea4d2;
 }
 
@@ -960,11 +894,8 @@ a,
 @media(max-width:1600px){
 
   .fifa-stage{
-
     transform:scale(.82);
-
     transform-origin:top center;
-
     height:980px;
   }
 
@@ -973,25 +904,16 @@ a,
 @media(max-width:1200px){
 
   .fifa-stage{
-
     transform:scale(.65);
-
     transform-origin:top left;
-
     height:760px;
   }
-
 }
 
 @media(max-width:768px){
-
   .fifa-stage{
-
     transform:scale(.45);
-
     transform-origin:top left;
-
     height:520px;
   }
-
 }
