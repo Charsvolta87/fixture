@@ -16,20 +16,33 @@ function renderGroups(){
     const card = document.createElement("div");
     card.className = "group-card";
 
-    let rows = "";
+    let teamsHTML = "";
 
-    group.standings.forEach(team => {
+    group.teams.forEach(team => {
 
-      const diff = team.gf - team.ga;
-
-      rows += `
-        <tr>
-          <td>${team.team}</td>
-          <td>${team.pts}</td>
-          <td>${diff}</td>
-        </tr>
+      teamsHTML += `
+        <div class="group-team">
+          ${team}
+        </div>
       `;
+
     });
+
+    card.innerHTML = `
+      <div class="group-title">
+        Grupo ${groupName}
+      </div>
+
+      <div class="group-teams">
+        ${teamsHTML}
+      </div>
+    `;
+
+    groupsContainer.appendChild(card);
+
+  });
+
+}
 
     card.innerHTML = `
       <div class="group-title">

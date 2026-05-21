@@ -344,3 +344,23 @@ nav a:hover{
   }
 
 }
+
+.group-teams{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.group-team{
+  padding:14px 18px;
+  border-radius:14px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.05);
+  font-weight:600;
+  transition:.3s;
+}
+
+.group-team:hover{
+  transform:translateX(5px);
+  border-color:rgba(255,255,255,.15);
+}
