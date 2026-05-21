@@ -197,7 +197,7 @@ nav a:hover{
   backdrop-filter:blur(14px);
   transition:.35s;
   min-width:0;
-  overflow-x:auto;
+  overflow:hidden;
   
 }
 
