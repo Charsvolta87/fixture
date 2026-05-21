@@ -354,138 +354,126 @@ function renderKnockout(){
 
   knockoutContainer.innerHTML = "";
 
+  const roundsOrder = [
+    "DIECISEISAVOS",
+    "OCTAVOS",
+    "CUARTOS",
+    "SEMIFINAL",
+    "FINAL"
+  ];
+
   const rounds = {};
 
-  // =========================
-  // AGRUPAR POR RONDA
-  // =========================
-
-  knockout.forEach(match => {
-
-    if(!rounds[match.round]){
-
-      rounds[match.round] = [];
-
-    }
-
-    rounds[match.round].push(match);
-
+  roundsOrder.forEach(round => {
+    rounds[round] = knockout.filter(
+      match => match.round === round
+    );
   });
 
-  // =========================
-  // RENDER
-  // =========================
+  let bracketHTML = `
+    <div class="bracket-wrapper">
+      <div class="bracket">
+  `;
 
-  Object.entries(rounds)
-    .forEach(([roundName,matches]) => {
+  roundsOrder.forEach(roundName => {
 
-      const round =
-        document.createElement("div");
+    bracketHTML += `
+      <div class="bracket-round">
 
-      round.className =
-        "knockout-round";
+        <div class="bracket-round-title">
+          ${roundName}
+        </div>
+    `;
 
-      let matchesHTML = "";
+    rounds[roundName].forEach(match => {
 
-      matches.forEach(match => {
+      let awayTeam = match.away;
 
-        let awayTeam =
-          match.away;
+      if(
+        !awayTeam &&
+        match.awayOptions &&
+        match.awayOptions.length
+      ){
 
-        // =========================
-        // VARIABLES FIFA
-        // =========================
+        awayTeam =
+          `3º ${match.awayOptions
+            .map(team =>
+              team.replace("3","")
+            )
+            .join("/")}`;
 
-        if(
-          !awayTeam &&
-          match.awayOptions.length
-        ){
+      }
 
-          awayTeam =
-            `3º(${match.awayOptions
-              .map(team =>
-                team.replace("3","")
-              )
-              .join("/")})`;
+      const score =
+        match.homeScore !== null
+        ? `${match.homeScore} - ${match.awayScore}`
+        : "VS";
 
-        }
+      const statusClass =
+        match.status === "finished"
+        ? "status-finished"
+        : "status-upcoming";
 
-        const score =
-          match.homeScore !== null
-          ? `${match.homeScore} - ${match.awayScore}`
-          : "VS";
+      const statusText =
+        match.status === "finished"
+        ? "FINALIZADO"
+        : "PRÓXIMO";
 
-        matchesHTML += `
+      bracketHTML += `
 
-          <div class="knockout-card">
+        <div class="bracket-match">
 
-            <div class="match-status
-              ${match.status === "finished"
-                ? "status-finished"
-                : "status-upcoming"
-              }">
+          <div class="match-top">
 
-              ${
-                match.status === "finished"
-                ? "FINALIZADO"
-                : "PRÓXIMO"
-              }
-
+            <div class="match-date">
+              ${match.date}
             </div>
 
-            <div class="group-badge">
-              PARTIDO ${match.id}
-            </div>
-
-            <div class="teams">
-
-              <div class="team knockout-team">
-                ${match.home}
-              </div>
-
-              <div class="score">
-                ${score}
-              </div>
-
-              <div class="team">
-                ${awayTeam}
-              </div>
-
-            </div>
-
-            <div class="match-info">
-
-              🏟 ${match.stadium}<br>
-
-              🌎 ${match.city}<br>
-
-              📅 ${match.date}<br>
-
-              🕒 ${match.timeAR} (ARG)
-
+            <div class="match-city">
+              ${match.city}
             </div>
 
           </div>
 
-        `;
+          <div class="match-status ${statusClass}">
+            ${statusText}
+          </div>
 
-      });
+          <div class="bracket-team">
+            ${match.home}
+          </div>
 
-      round.innerHTML = `
+          <div class="bracket-score">
+            ${score}
+          </div>
 
-        <div class="knockout-title">
-          ${roundName}
-        </div>
+          <div class="bracket-team">
+            ${awayTeam}
+          </div>
 
-        <div class="knockout-grid">
-          ${matchesHTML}
+          <div class="bracket-info">
+            🏟 ${match.stadium}<br>
+            🕒 ${match.timeAR} ARG
+          </div>
+
         </div>
 
       `;
 
-      knockoutContainer.appendChild(round);
-
     });
+
+    bracketHTML += `
+      </div>
+    `;
+
+  });
+
+  bracketHTML += `
+      </div>
+    </div>
+  `;
+
+  knockoutContainer.innerHTML = bracketHTML;
 
 }
 
