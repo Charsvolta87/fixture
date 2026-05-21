@@ -1,4 +1,4 @@
-const matches = [
+const knockout = [
   {
     "id": 73,
     "round": "DIECISEISAVOS",
