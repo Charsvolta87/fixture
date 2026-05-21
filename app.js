@@ -68,9 +68,7 @@ function renderGroups(){
 
     groupsContainer.appendChild(card);
 
-  });
-
-}
+  
 
 function renderMatches(){
 
