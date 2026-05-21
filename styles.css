@@ -586,3 +586,14 @@ a,
 
   min-height:44px;
 }
+
+@media(min-width:1000px){
+
+  #groups-container{
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+  }
+
+}
