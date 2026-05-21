@@ -233,7 +233,9 @@ function renderGroups(){
         Grupo ${groupName}
       </div>
 
-      <table class="standings">
+      <div class="group-table-wrapper">
+
+        <table class="standings">
 
         <thead>
           <tr>
