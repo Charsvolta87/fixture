@@ -872,7 +872,7 @@ a,
 .bracket-info{
   margin-top:12px;
   text-align:center;
-  font-size:.8rem;
+  font-size: 13px;
   color:var(--muted);
   line-height:1.5;
 }
