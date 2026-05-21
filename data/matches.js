@@ -448,4 +448,269 @@ const matches = [
   awayScore: null
 },
 
+
+// =====================
+// GROUP F
+// =====================
+
+{
+  id: 31,
+  group: "F",
+  home: "Países Bajos",
+  away: "Japón",
+  stadium: "Boston Stadium",
+  city: "Boston",
+  date: "2026-06-16",
+  timeAR: "22:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 32,
+  group: "F",
+  home: "Suecia",
+  away: "Túnez",
+  stadium: "Dallas Stadium",
+  city: "Dallas",
+  date: "2026-06-17",
+  timeAR: "18:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 33,
+  group: "F",
+  home: "Países Bajos",
+  away: "Suecia",
+  stadium: "Atlanta Stadium",
+  city: "Atlanta",
+  date: "2026-06-21",
+  timeAR: "21:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 34,
+  group: "F",
+  home: "Japón",
+  away: "Túnez",
+  stadium: "Philadelphia Stadium",
+  city: "Philadelphia",
+  date: "2026-06-22",
+  timeAR: "20:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 35,
+  group: "F",
+  home: "Países Bajos",
+  away: "Túnez",
+  stadium: "San Francisco Stadium",
+  city: "San Francisco",
+  date: "2026-06-26",
+  timeAR: "23:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 36,
+  group: "F",
+  home: "Japón",
+  away: "Suecia",
+  stadium: "Vancouver Stadium",
+  city: "Vancouver",
+  date: "2026-06-26",
+  timeAR: "19:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+// =====================
+// GROUP G
+// =====================
+
+{
+  id: 37,
+  group: "G",
+  home: "Bélgica",
+  away: "Egipto",
+  stadium: "Houston Stadium",
+  city: "Houston",
+  date: "2026-06-17",
+  timeAR: "22:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 38,
+  group: "G",
+  home: "Irán",
+  away: "Nueva Zelanda",
+  stadium: "Toronto Stadium",
+  city: "Toronto",
+  date: "2026-06-18",
+  timeAR: "18:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 39,
+  group: "G",
+  home: "Bélgica",
+  away: "Irán",
+  stadium: "Chicago Stadium",
+  city: "Chicago",
+  date: "2026-06-22",
+  timeAR: "21:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 40,
+  group: "G",
+  home: "Egipto",
+  away: "Nueva Zelanda",
+  stadium: "Miami Stadium",
+  city: "Miami",
+  date: "2026-06-23",
+  timeAR: "20:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 41,
+  group: "G",
+  home: "Bélgica",
+  away: "Nueva Zelanda",
+  stadium: "Los Angeles Stadium",
+  city: "Los Ángeles",
+  date: "2026-06-27",
+  timeAR: "22:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 42,
+  group: "G",
+  home: "Egipto",
+  away: "Irán",
+  stadium: "Seattle Stadium",
+  city: "Seattle",
+  date: "2026-06-27",
+  timeAR: "19:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+// =====================
+// GROUP H
+// =====================
+
+{
+  id: 43,
+  group: "H",
+  home: "España",
+  away: "Cabo Verde",
+  stadium: "MetLife Stadium",
+  city: "Nueva York",
+  date: "2026-06-18",
+  timeAR: "22:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 44,
+  group: "H",
+  home: "Arabia Saudita",
+  away: "Uruguay",
+  stadium: "Dallas Stadium",
+  city: "Dallas",
+  date: "2026-06-19",
+  timeAR: "18:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 45,
+  group: "H",
+  home: "España",
+  away: "Arabia Saudita",
+  stadium: "Atlanta Stadium",
+  city: "Atlanta",
+  date: "2026-06-23",
+  timeAR: "21:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 46,
+  group: "H",
+  home: "Cabo Verde",
+  away: "Uruguay",
+  stadium: "Kansas City Stadium",
+  city: "Kansas City",
+  date: "2026-06-24",
+  timeAR: "20:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 47,
+  group: "H",
+  home: "España",
+  away: "Uruguay",
+  stadium: "San Francisco Stadium",
+  city: "San Francisco",
+  date: "2026-06-28",
+  timeAR: "23:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
+{
+  id: 48,
+  group: "H",
+  home: "Cabo Verde",
+  away: "Arabia Saudita",
+  stadium: "Vancouver Stadium",
+  city: "Vancouver",
+  date: "2026-06-28",
+  timeAR: "19:00",
+  status: "upcoming",
+  homeScore: null,
+  awayScore: null
+},
+
 ];
