@@ -408,3 +408,55 @@ body::before{
   font-weight:700;
   letter-spacing:1px;
 }
+
+
+.group-tabs{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:35px;
+}
+
+.tab-btn{
+  width:48px;
+  height:48px;
+
+  border-radius:14px;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  background:rgba(255,255,255,.04);
+
+  color:white;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.3s;
+
+  backdrop-filter:blur(10px);
+}
+
+.tab-btn:hover{
+  transform:translateY(-3px);
+
+  border-color:rgba(255,255,255,.2);
+
+  background:rgba(255,255,255,.08);
+}
+
+.tab-btn.active{
+  background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+
+  border:none;
+
+  box-shadow:
+    0 0 20px rgba(0,195,255,.35);
+
+  transform:translateY(-2px);
+}

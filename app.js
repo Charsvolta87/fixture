@@ -4,6 +4,7 @@
 
 const groupsContainer = document.getElementById("groups-container");
 const matchesContainer = document.getElementById("matches-container");
+let currentGroup = "ALL";
 
 renderGroups();
 renderMatches();
@@ -72,9 +73,22 @@ function renderGroups(){
 
 function renderMatches(){
 
-  matches.forEach(match => {
+  matchesContainer.innerHTML = "";
+
+  let filteredMatches = matches;
+
+  if(currentGroup !== "ALL"){
+
+    filteredMatches = matches.filter(
+      match => match.group === currentGroup
+    );
+
+  }
+
+  filteredMatches.forEach(match => {
 
     const card = document.createElement("div");
+
     card.className = "match-card";
 
     const statusClass =
