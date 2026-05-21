@@ -45,32 +45,7 @@ function renderGroups(){
 
 }
 
-    card.innerHTML = `
-      <div class="group-title">
-        Grupo ${groupName}
-      </div>
-
-      <table class="standings">
-
-        <thead>
-          <tr>
-            <th>Equipo</th>
-            <th>PTS</th>
-            <th>DIF</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          ${rows}
-        </tbody>
-
-      </table>
-    `;
-
-    groupsContainer.appendChild(card);
-
-  
-
+   
 function renderMatches(){
 
   matchesContainer.innerHTML = "";
