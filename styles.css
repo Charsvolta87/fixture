@@ -272,6 +272,9 @@ nav a:hover{
   min-height:180px;
   position:relative;
   overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }
 
 .match-card:hover{
@@ -298,12 +301,13 @@ nav a:hover{
 }
 
 .teams{
-  display:grid;
-  grid-template-columns:
-    1fr auto 1fr;
+  display:flex;
   align-items:center;
-  gap:12px;
+  justify-content:center;
+  gap:18px;
   margin:22px 0;
+  flex-wrap:wrap;
+  text-align:center;
 }
 
 .team{
@@ -313,6 +317,7 @@ nav a:hover{
   font-weight:700;
   font-size:.95rem;
   min-width:0;
+  justify-content:center;
 }
 
 .score{
@@ -322,9 +327,10 @@ nav a:hover{
 }
 
 .match-info{
-  margin-top:20px;
   color:var(--muted);
   font-size:.95rem;
+  margin-top:auto;
+  padding-top:18px;
 }
 
 .bracket{
