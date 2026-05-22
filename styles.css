@@ -738,7 +738,7 @@ a,
 
 .r4.left{
   left:200px;
-  top:400px;
+  top:650px;
   gap:380px;
 }
 
@@ -762,7 +762,7 @@ a,
 }
 
 .r4.right{
-  right:200px;
+  right:650px;
   top:350px;
   gap:380px;
 }
