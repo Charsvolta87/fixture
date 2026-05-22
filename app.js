@@ -53,13 +53,12 @@ const flags = {
   "República Democrática del Congo":"cd"
 
 };
-function getFlag(team){
 
-  const knockoutContainer =
+const knockoutContainer =
   document.getElementById(
     "knockout-container"
   );
-
+function getFlag(team){
   const code = flags[team];
 
   return `
@@ -78,6 +77,7 @@ let currentGroup = "ALL";
 
 renderGroups();
 renderMatches();
+renderKnockout();
 startCountdown();
 
 function renderGroups(){
