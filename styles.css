@@ -743,8 +743,8 @@ a,
 }
 
 .r2.left{
-  right:600px;
-  top:520px;
+  left:600px;
+  top:500px;
 }
 
 /* RIGHT */
@@ -769,7 +769,7 @@ a,
 
 .r2.right{
   right:600px;
-  top:520px;
+  top:500px;
 }
 
 /* ===================================== */
